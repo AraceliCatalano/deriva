@@ -6,6 +6,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../assets/images/logoWhite.ico';
 import '../assets/Header.css'
 
+import CartWidget from './CartWidget';
+
 function Header() {
   return (
     <>
@@ -21,15 +23,15 @@ function Header() {
             <Nav.Link href="#link">Bonus Track</Nav.Link>
             </Nav>
             <Nav className="ustify-conttent-end">
+
             <Nav.Link href="#link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
+              <CartWidget/>            
             </Nav.Link>
-            <NavDropdown title="Ingresar" id="basic-nav-dropdown" className="justify-conttent-end" >
+
+            <NavDropdown title="Ingresar" id="basic-nav-dropdown" className="justify-conttent-end" variant="dark">
               <NavDropdown.Item href="#action/3.1" variant="dark">Usuario registrado</NavDropdown.Item>           
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="#action/3.2" variant="dark">
                 Registrarse
               </NavDropdown.Item>
             </NavDropdown>

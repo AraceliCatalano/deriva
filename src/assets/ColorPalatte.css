@@ -1,0 +1,30 @@
+/* Color Theme Swatches in Hex */
+.Itineraries_4-2-hex { color: #03242F; }
+.Itineraries_4-3-hex { color: #7FAF9E; }
+.Itineraries_4-4-hex { color: #EEDBAE; }
+.Error-hex { color: #D81921; }
+.PassGreen-hex { color: #166963; }
+.Warning-hex { color: #E38322; }
+
+/* Color Theme Swatches in RGBA */
+.Itineraries_4-2-rgba { color: rgba(3, 36, 47, 1); }
+.Itineraries_4-3-rgba { color: rgba(127, 175, 158, 1); }
+.Itineraries_4-4-rgba { color: rgba(238, 219, 174, 1); }
+.Itineraries1-1-rgba { color: rgba(216, 25, 33, 1); }
+.Itineraries1-4-rgba { color: rgba(22, 105, 99, 1); }
+
+
+/* Color Theme Swatches in HSLA */
+.Itineraries_4-2-hsla { color: hsla(195, 87, 9, 1); }
+.Itineraries_4-3-hsla { color: hsla(158, 23, 59, 1); }
+.Itineraries_4-4-hsla { color: hsla(42, 65, 80, 1); }
+.Itineraries1-1-hsla { color: hsla(357, 79, 47, 1); }
+.Itineraries1-4-hsla { color: hsla(175, 65, 24, 1); }
+
+
+
+
+
+
+
+
