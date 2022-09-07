@@ -1,11 +1,19 @@
 import React from 'react';
 import ItemCount from './ItemCount'
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
+import { Row, Col } from 'react-bootstrap';
+import swal from 'sweetalert';
 
 function ItemListContainer ({greeting}) {
+
+    const onAdd = () => {
+
+        swal({
+        title: `Se agregó el item al carrito`,
+        icon: 'success',
+        button: "Aceptar",        
+    })}
+
     return (
        <> 
        <h1 style={styles.h1}>{greeting}</h1>
@@ -15,7 +23,8 @@ function ItemListContainer ({greeting}) {
                 <Col sm>
                     <ItemCount 
                     initial = {0}
-                    stock = {10}
+                    stock = {5}
+                    onAdd = {onAdd}
                     />
                 </Col>
                 {/* <Col sm>Otro paseo</Col>
@@ -34,6 +43,7 @@ function ItemListContainer ({greeting}) {
             color: "#7FAF9E",
             alignItems: 'center'
         }
+       
     }
 
 
