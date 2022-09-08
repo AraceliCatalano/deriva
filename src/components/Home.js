@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
-import ItemList from './Products/ItemList';
+import ItemList from './catalog/ItemList';
 import '../assets/App.css'
 
 function Home () {
