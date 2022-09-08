@@ -1,27 +1,73 @@
-body {
-    background-color: #fafafa;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    align-items: center;
-    height: 100vh;
+h2 {
+    color: #03242F;
+    padding-top: 30px;
 }
+
+/****** Banner image ******/
+.banner {
+    padding-top: 80px;
+    width: 100% !important;
+}
+/****** END Banner image ******/
+
+/****** Header ******/
+.logo {
+    width: 45px;
+    padding: 0 15px 0 0;    
+  }
+
+.link {
+    text-decoration: none;
+    padding: 0 10px
+}
+/****** END Header ******/
+
+/****** Catalog and tours ******/
+
+.catalog {
+    padding: 10px 50px;
+}
+
+.catalog-title {
+    padding: 100px 20px 20px 20px;
+    color: "#7FAF9E";
+    align-items: center;
+}
+
+.item {
+    width: 18rem;
+    margin-bottom: 20px;
+ }
+
+ /******* END Catalog and tours ******/
+
+
+  /******* Footer ******/
+
+ .mainPageContainer {
+    padding-top: 80px;
+ }
+/******* END Footer ******/
+
+/******* Auth proces  ******/
 
 .box {
-    border: 1px solid #dfdfdf;
-    background-color: #fff;
+    margin: 100px;
+    border: 1px solid #EEDBAE;
+    border-radius: 15px;
+    max-width: 700px !important;
+
 }
 
-.g-btn {
-    width: 100% !important;
-    height: 100% !important;
-    line-height: 40px !important;
+.btn {  
     font-size: 15px !important;
+    color: white !important;
 }
 
-.g-btn > div,
-.g-btn > div > svg {
-    width: 40px !important;
-    height: 32px !important;
+.g-btn { 
+    border-radius: 7px;
+    width: 90% !important;
+    align-self: center;
 }
+
+/******* END Auth proces  ******/
