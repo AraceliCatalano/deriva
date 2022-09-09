@@ -1,0 +1,18 @@
+/****** Catalog and tours ******/
+
+.catalog {
+    padding: 10px 50px;
+}
+
+.catalog-title {
+    padding: 100px 20px 20px 20px;
+    color: "#7FAF9E";
+    align-items: center;
+}
+
+.item {
+    width: 18rem;
+    margin-bottom: 20px;
+ }
+
+ /******* END Catalog and tours ******/

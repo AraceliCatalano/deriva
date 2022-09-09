@@ -14,7 +14,7 @@ function Header() {
       <Navbar className="fixed-top" bg="dark" variant="dark" expand="lg">
       <Container>
         <img src={logo} alt="logo" className="logo"/>
-        <Navbar.Brand href="/">Deriva</Navbar.Brand>
+        <Navbar.Brand >Deriva</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -22,21 +22,21 @@ function Header() {
             <Link to="/" className="link">Home</Link>
             </Navbar.Text>
             <Navbar.Text>
-            <Link to="/paseos" className="link" >Paseos</Link>
+            <Link to="/" className="link" >Paseos</Link>
             </Navbar.Text>
             <Navbar.Text>
-            <Link to="/bonusTracks" className="link" >Bonus Track</Link>
+            <Link to="/" className="link" >Bonus Track</Link>
             </Navbar.Text>
             
             </Nav>
             <Nav className="justify-content-end">
 
-            <Nav.Link href="#link">
+            <Nav.Link >
               <CartWidget/>            
             </Nav.Link>
 
             <Navbar.Text>
-            <Link to="/login" className="link" >Ingresar</Link>
+            <Link to="/" className="link" >Ingresar</Link>
             </Navbar.Text>
 
             </Nav>

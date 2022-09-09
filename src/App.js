@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header'
-import Home from './components/home/Home'
+import Banner from './components/home/Banner'
 import ItemListContainer from './components/catalog/ItemListContainer';
 import { Routes, Route } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
@@ -10,14 +10,14 @@ function App() {
   return (
    <>
     <Header />
-
+    <Banner />
      <Container>
         <Row>
           <Col>
             
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/paseos" element={<ItemListContainer greeting="Elegí uno de nuestros paseos." />} />    
+                <Route path="/" element={<ItemListContainer />} />
+                <Route path="/" element={<ItemListContainer />} />    
                  
                 </Routes>
             

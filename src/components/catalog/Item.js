@@ -1,25 +1,18 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import CCRecoleta from '../../assets/images/CCRecoleta.png';
-import ItemCount from './ItemCount'
-import '../../assets/styles/App.css'
+import '../../assets/styles/Item.css'
 
-function Item () {
+function Item ({tour}) {
+    console.log('tour desde ITEM', tour)
     return (
        <> 
         <Card className="item">
-        <Card.Img variant="top" src={CCRecoleta} />
+        <Card.Img variant="top" src={tour.image} />
         <Card.Body>
-            <Card.Title>Título del paseo</Card.Title>
-            <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-            </Card.Text>
-            <ItemCount 
-                    initial = {0}
-                    stock = {10}
-                    />
+            <Card.Title>{tour.name}</Card.Title>
+            <Card.Text>{tour.description}</Card.Text>
+            <Card.Text>${tour.price}</Card.Text>
             <Button variant="dark" className="text-center ">Ver paseo</Button>
         </Card.Body>
         </Card>        
