@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { ButtonGroup, ListGroup} from 'react-bootstrap';
+
 
 const ItemCount = ({ stock, initial, onAdd }) => {
     
@@ -21,48 +20,33 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
 
     return (
-        <>
-        <Card style={{ width: '18rem' }}>
-            <Card.Body>
-                <Card.Title>Gift Card</Card.Title>
-                <Card.Text>
-                ¡Regalá uno de nuestros paseos urbanos!
-                </Card.Text>
-                <ListGroup className="list-group-flush">
-                    <ListGroup.Item>
-                        <ButtonGroup aria-label="Basic example">
-                        <Button variant="secondary" onClick={reduceQuantity}>-</Button>
-                        <Button variant="secondary">{quantity}</Button>
-                        <Button variant="secondary" onClick={sumQuantity}>+</Button>
-                    </ButtonGroup>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                        <div>
+        <>                
+            <ListGroup className="list-group-flush" >
+                
+                    <ListGroup.Item className="text-center">
+                        <ButtonGroup size="sm me-2" aria-label="Basic example">
+                            <Button variant="secondary" onClick={reduceQuantity}>-</Button>
+                            <Button variant="secondary">{quantity}</Button>
+                            <Button variant="secondary" onClick={sumQuantity}>+</Button>
+                        </ButtonGroup>
+                        
                             {
                                 quantity > 0 ?
-                                <Button variant="dark" onClick={() => onAdd(quantity)}>
+                                <Button size="sm" variant="dark" onClick={() => onAdd(quantity)}>
                                     Agregar al carrito</Button>
                                 :
-                                <Button variant="secondary" disabled>
+                                <Button size="sm" variant="secondary" disabled>
                                     Agregar al carrito</Button>
                             }
-                            </div>
+                        
                     </ListGroup.Item>
-                    
-                </ListGroup>               
-            </Card.Body>
-        </Card>
-         
-            
+                </ListGroup>                         
         </>
     )
 
 }
 
 export default ItemCount
-
-
-
 
 
 

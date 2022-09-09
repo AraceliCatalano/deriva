@@ -1,15 +1,32 @@
 import React from 'react';
 import Header from './components/Header'
-import ItemListContainer from './components/ItemListContainer';
-
+import Banner from './components/home/Banner'
+import ItemListContainer from './components/catalog/ItemListContainer';
+import { Routes, Route } from 'react-router-dom';
+import { Container, Col, Row } from 'react-bootstrap';
 
 
 function App() {
   return (
    <>
     <Header />
-    <ItemListContainer greeting="Próximamente, aquí encontrarás el catálogo de paseos."/>  
+    <Banner />
+     <Container>
+        <Row>
+          <Col>
+            
+              <Routes>
+                <Route path="/" element={<ItemListContainer />} />
+                <Route path="/" element={<ItemListContainer />} />    
+                 
+                </Routes>
+            
+          </Col>
+        </Row>
+     </Container>
      
+   
+   
    </>   
   );
 }
