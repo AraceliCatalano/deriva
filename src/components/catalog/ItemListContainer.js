@@ -13,10 +13,8 @@ function ItemListContainer () {
             setTimeout(() => {
                 resolve(catalog)
             }, 2000)
-        } )
+        })
     }
-
-    console.log('Resultado promiseTours', promiseTours())
 
     useEffect(() => {
         promiseTours()
@@ -28,7 +26,7 @@ function ItemListContainer () {
                 alert(err)
             })
     })
-    console.log("TOURS DPS de PROMISe" ,tours)
+    
     return (
        <> 
         <h1 className='catalog-title'>Catálogo de paseos</h1>    

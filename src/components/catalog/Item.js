@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import '../../assets/styles/Item.css'
 
 function Item ({tour}) {
-    console.log('tour desde ITEM', tour)
+    
     return (
        <> 
         <Card className="item">
