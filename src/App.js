@@ -38,7 +38,7 @@ function App() {
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/restablecerContrasena" element={<ForgotPassword />} />
                 <Route path="/" element={<Home />} />
-                <Route path="/paseos" element={<ItemListContainer greeting="Elegí uno de nuestros paseos." />} />    
+                <Route path="/paseos" element={<ItemListContainer />} />    
                 <Route path="/bonusTracks" element={<BonusTrackMain />} />  
                 <Route path="/ayuda" element={<Help />} /> 
                 <Route path="/sobre-deriva" element={<About />} /> 
