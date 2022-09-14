@@ -11,7 +11,7 @@ const ItemDetailContainer = () =>{
     const [loading, setLoading] = useState(true);
 
     
-  //Para que se renderize una sola vez, agregar [] al final del useEffect.
+  //Para renderizar una sola vez, agregar [] al final del useEffect.
   useEffect(() => {
     const getItem = () => {
       return new Promise((resolve, reject) => {
