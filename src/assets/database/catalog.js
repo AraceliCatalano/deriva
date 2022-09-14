@@ -2,7 +2,7 @@ import img1 from "../images/PuertoMadero.png";
 import img2 from "../images/CCRecoleta.png";
 import img3 from "../images/MHistoricoNac.png";
 
-const catalog = [
+const Catalog = [
   {
     id: 1,
     name: "Mujeres de Puerto Madero",
@@ -95,4 +95,4 @@ const catalog = [
   },
 ];
 
-export default catalog;
+export default Catalog;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import ItemList from './ItemList'
-import catalog from '../../assets/database/catalog'
+import Catalog from '../../assets/database/Catalog'
 import '../../assets/styles/App.css'
 
 function ItemListContainer () {
@@ -11,12 +11,11 @@ function ItemListContainer () {
     const promiseTours = () => {
         return new Promise ( (resolve, reject) => {
             setTimeout(() => {
-                resolve(catalog)
+                resolve(Catalog)
             }, 2000)
         } )
     }
 
-    console.log('Resultado promiseTours', promiseTours())
 
     useEffect(() => {
         promiseTours()
@@ -28,7 +27,7 @@ function ItemListContainer () {
                 alert(err)
             })
     })
-    console.log("TOURS DPS de PROMISe" ,tours)
+    
     return (
        <> 
         <h1 className='catalog-title'>Catálogo de paseos</h1>    

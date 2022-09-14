@@ -3,3 +3,10 @@ h2 {
     padding-top: 30px;
 }
 
+.link {
+    color: white;
+}
+
+.link:hover {
+    color: white;
+}
