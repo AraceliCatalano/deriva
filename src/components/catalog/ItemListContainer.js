@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import ItemList from './ItemList'
-import catalog from '../../assets/database/catalog'
+import Catalog from '../../assets/database/Catalog'
 import '../../assets/styles/App.css'
 
 function ItemListContainer () {
@@ -11,7 +11,7 @@ function ItemListContainer () {
     const promiseTours = () => {
         return new Promise ( (resolve, reject) => {
             setTimeout(() => {
-                resolve(catalog)
+                resolve(Catalog)
             }, 2000)
         })
     }

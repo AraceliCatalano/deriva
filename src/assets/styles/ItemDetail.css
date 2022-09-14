@@ -1,0 +1,11 @@
+.item-detail-container {
+    padding-top: 100px;
+}
+
+.tour-image {
+    max-width: 400px;
+}
+
+.context {
+    text-align: justify;
+}
