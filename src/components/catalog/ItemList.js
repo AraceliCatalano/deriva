@@ -11,8 +11,8 @@ function ItemList ({ tours = [] }) {
         <Container className="mt-3 catalog">
             <Row>
             {tours.map((tour) =>
-                <Col sm>
-                 <Item tour={tour} key={tour.id}/> 
+                <Col sm key={tour.id}>
+                 <Item tour={tour} /> 
                 </Col>
                 )}
             </Row>

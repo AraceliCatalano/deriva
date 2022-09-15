@@ -11,7 +11,7 @@ import CartWidget from '../components/catalog/CartWidget';
 function Header() {
   return (
     <>
-      <Navbar className="fixed-top" bg="dark" variant="dark" expand="lg">
+      <Navbar className="fixed-top header" bg="dark" variant="dark" expand="lg">
       <Container>
         <img src={logo} alt="logo" className="logo"/>
         <Navbar.Brand >Deriva</Navbar.Brand>
@@ -22,7 +22,7 @@ function Header() {
             <Link to="/" className="link">Home</Link>
             </Navbar.Text>
             <Navbar.Text>
-            <Link to="/" className="link" >Paseos</Link>
+            <Link to="/paseos" className="link" >Paseos</Link>
             </Navbar.Text>
             <Navbar.Text>
             <Link to="/" className="link" >Bonus Track</Link>

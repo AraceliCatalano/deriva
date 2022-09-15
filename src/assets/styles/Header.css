@@ -1,4 +1,8 @@
 /****** Header ******/
+.header {
+  margin-bottom: 20px;
+}
+
 .logo {
   width: 45px;
   padding: 0 15px 0 0;    
@@ -8,4 +12,6 @@
   text-decoration: none;
   padding: 0 10px
 }
+
+
 /****** END Header ******/

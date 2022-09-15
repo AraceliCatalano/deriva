@@ -3,7 +3,8 @@
 }
 
 .tour-image {
-    max-width: 400px;
+    max-width: 350px;
+    max-height: 100px;
 }
 
 .context {
