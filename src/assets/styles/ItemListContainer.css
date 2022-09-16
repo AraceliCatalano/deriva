@@ -22,3 +22,8 @@
     color: black;
     background-color: #7FAF9E;
 }
+
+.category-title {
+    color: #03242F;
+    padding: 10px 0 0 70px;
+}

@@ -1,6 +1,6 @@
 /****** Header ******/
 .header {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .logo {
@@ -11,6 +11,11 @@
 .link {
   text-decoration: none;
   padding: 0 10px
+}
+
+.dropdown-link {
+  text-decoration: none;
+  color: #03242F !important;
 }
 
 

@@ -6,11 +6,11 @@ function Home () {
     return (
        <> 
         <Banner /> 
-        <ItemListContainer />
-        {/* <ItemListContainer category="Arquitectura"/>
-        <ItemListContainer category="Arte"/>
+        <h2 className='catalog-title'>Catálogo de paseos</h2>  
+        <ItemListContainer category="Arquitectura"/>
         <ItemListContainer category="Historia"/>
-        <ItemListContainer category="Historias en bondi"/> */}
+        <ItemListContainer category="Historias en bondi"/>
+        <ItemListContainer category="Arte"/>
        </>
     )
 }

@@ -5,7 +5,7 @@ import '../../assets/styles/App.css'
 
 
 function ItemList ({ tours = [] }) {
-    
+    console.log("tours desde ItemList", tours)
     return (
         <>  
         <Container className="mt-3 catalog">
