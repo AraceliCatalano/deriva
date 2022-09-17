@@ -18,6 +18,7 @@ function ItemListContainer ({categoryId, categoryName}) {
                 }, 2000)
             })
         }
+
         promiseTours()
         .then((result) => {
                const tours = result.filter(tour => tour.categoryId === categoryId)           
