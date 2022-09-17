@@ -10,3 +10,46 @@ h2 {
 .link:hover {
     color: white;
 }
+
+/******* Bonus Track ******/
+.bonusTrackContainer {
+    justify-content: space-around;
+    padding: 0 50px 200px 50px;    
+}
+
+.bt-description {
+    padding-bottom: 10px;
+    text-align: justify;
+}
+
+.accordion-button {
+    background-color: #03242F !important;
+    color: white !important;
+}
+
+
+
+
+/******* END Bonus Track ******/
+
+
+/******* Footer ******/
+
+  .mainPageContainer {
+    padding-bottom: 150px;
+    text-align: justify;
+ }
+
+ .about-title {
+    margin: 30px 0 30px 0;
+ }
+
+ .twitter-icon {
+    background-color: white;
+ }
+/******* END Footer ******/
+
+.warning {
+    color: #D81921;
+    font-weight: bold;
+}

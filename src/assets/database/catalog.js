@@ -1,6 +1,9 @@
 import img1 from "../images/PuertoMadero.png";
 import img2 from "../images/CCRecoleta.png";
 import img3 from "../images/MHistoricoNac.png";
+import PM1 from "../images/PM1.JPG";
+import PM2 from "../images/PM2.JPG";
+import PM3 from "../images/PM3.JPG";
 
 const Catalog = [
   {
@@ -9,8 +12,12 @@ const Catalog = [
     price: 1000,
     description:
       "Un recorrido por el barrio de Puerto Madero a través de la historia de las mujeres que dan nombre a sus calles.",
-    image: img1,
-    category: ["Historia"]
+    mainImage: img1,
+    categoryId: "C1",
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Las calles del barrio Puerto Madero tienen desde 1995 nombres de mujeres argentinas. Por medio de la Ordenanza Nº 49.668, la Ciudad de Buenos Aires ese año dertermió nombrar las calles de Puerto Madero con nombres de destacadas personalidades femeninas de diversas disciplinas. Este paseo recorre sus historias."   
+
   },
   {
     id: 2,
@@ -18,8 +25,11 @@ const Catalog = [
     price: 1500,
     description:
       "Un paseo por Recoleta conectado por las obras del arquitecto Clorindo Testa.",
-    image: img2,
-    category: ["Arquitectura"],
+    mainImage: img2,
+    categoryId: "C4",
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
   },
   {
     id: 3,
@@ -27,8 +37,11 @@ const Catalog = [
     price: 1000,
     description:
       "Breve viaje incómodo y fascinante hacia las historias de la primera funcdación de Buenos Aires.",
-    image: img3,
-    category: ["Historia"]
+    mainImage: img3,
+    categoryId: "C1",
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
   },
   {
     id: 4,
@@ -36,8 +49,12 @@ const Catalog = [
     price: 1000,
     description:
       "Buenos Aires es una de las pocas ciudades en el mundo que fue fundada dos veces. Este paseo recorre las historias de la vez definitiva.",
-    image: img3,
-    category: ["Historia"]
+    mainImage: img3,
+    categoryId: "C1",
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. "   
+
   },
   {
     id: 5,
@@ -45,8 +62,11 @@ const Catalog = [
     price: 1000,
     description:
       "Colección de historias breves para escuchar en el colectivo 152.",
-    image: img3,
-    category: ["Historias en bondi", "Gratis"]
+    mainImage: img3,
+    categoryId: "C2", 
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
   },
   {
     id: 6,
@@ -54,8 +74,11 @@ const Catalog = [
     price: 0,
     description:
     "Colección de historias breves para escuchar en el colectivo 126.",
-    image: img3,
-    category: ["Historias en bondi", "Gratis"]
+    mainImage: img3,
+    categoryId: "C2",
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
   },
   {
     id: 7,
@@ -63,8 +86,11 @@ const Catalog = [
     price: 0,
     description:
     "Colección de historias breves para escuchar en el colectivo 130.",
-    image: img3,
-    category: ["Historias en bondi", "Gratis"]
+    mainImage: img3,
+    categoryId: "C2",
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
   },
   {
     id: 8,
@@ -72,8 +98,11 @@ const Catalog = [
     price: 1000,
     description:
       "Una exploración de la huella cultural e industrial de la ciudad a través de las obras de Alvarez.",
-    image: img3,
-    category: ["Arquitectura"]
+    mainImage: img3,
+    categoryId: "C4",
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
   },
   {
     id: 9,
@@ -81,8 +110,11 @@ const Catalog = [
     price: 1000,
     description: 
       "Conoce la obra de Mariette Lydis en un paseo por sus obras.",
-    image: img3,
-    category: ["Arte"]
+    mainImage: img3,
+    categoryId: "C3",
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
   },
   {
     id: 10,
@@ -90,8 +122,11 @@ const Catalog = [
     price: 0,
     description:
       "Breve recorrido por los puntos más visitados del centro de Buenos Aires.",
-    image: img3,
-    category: ["Gratis"]
+    mainImage: img3,
+    categoryId: "C4",
+    detailImages: [PM1, PM2, PM3],
+    duration: "40 minutos",
+    context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
   },
 ];
 

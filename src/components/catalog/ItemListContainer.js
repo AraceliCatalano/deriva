@@ -1,43 +1,50 @@
 import React, { useEffect, useState} from 'react';
-import ItemList from './ItemList'
-import Catalog from '../../assets/database/Catalog'
-import '../../assets/styles/App.css'
+import ItemList from './ItemList';
+import Catalog from '../../assets/database/Catalog';
+import '../../assets/styles/ItemListContainer.css';
 
-function ItemListContainer () {
+
+function ItemListContainer ({categoryId, categoryName}) {
    
-    const [tours, setTours] = useState([])
-    const [status, setStatus] = useState(`flex`)
-    
-    const promiseTours = () => {
-        return new Promise ( (resolve, reject) => {
-            setTimeout(() => {
-                resolve(Catalog)
-            }, 2000)
-        })
-    }
+    const [tours, setTours] = useState([]);
+    const [status, setStatus] = useState(`flex`);
 
-    useEffect(() => {
+ 
+   useEffect(() => {
+        const promiseTours = () => {
+            return new Promise ( (resolve, reject) => {
+                setTimeout(() => {
+                    resolve(Catalog)
+                }, 2000)
+            })
+        }
+
         promiseTours()
-            .then((result) => {
-                setTours(result)
+        .then((result) => {
+               const tours = result.filter(tour => tour.categoryId === categoryId)           
+                setTours(tours)
                 setStatus(`none`)
             })
-            .catch ( (err) => {
-                alert(err)
-            })
-    })
+            .catch ( (err) => { console.log(err) })
+            }, [categoryId])
+
+         
     
     return (
        <> 
-        <h1 className='catalog-title'>Catálogo de paseos</h1>    
-        <ItemList tours={tours}/>
-        <div style={{display: status }}>
-        <div className="d-flex justify-content-center">
-            <div className="spinner-border" role="status">
-                <span className="visually-hidden">Loading...</span>
+        <div className="catalog-container">
+            <div className="category-title">
+                <h3 >{categoryName}</h3>
             </div>
-        </div>
-        </div>
+            <div style={{display: status, justifyContent: 'center', paddingTop: '10px'}}>
+                <div className="d-flex justify-content-center">
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <ItemList tours={tours}/>
+        </div>      
       
        </>
     )

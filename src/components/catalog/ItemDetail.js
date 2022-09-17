@@ -1,13 +1,10 @@
 import React from "react";
 import '../../assets/styles/ItemDetail.css';
 import Carousel from "react-bootstrap/Carousel";
-// import PM1 from "../../assets/images/PM1.JPG";
-// import PM2 from "../../assets/images/PM2.JPG";
-// import PM3 from "../../assets/images/PM3.JPG";
-// import { Container, Col, Row } from 'react-bootstrap';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const ItemDetail = ({item}) => {
+ 
   return (
 
     <Container className="item-detail-container">
@@ -19,21 +16,21 @@ const ItemDetail = ({item}) => {
         <Carousel.Item>
         <img
           className="d-block w-100 "
-          src={item.image[0]} 
+          src={item.detailImages[0]} 
           alt="PM1"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100 "
-          src={item.image[1]} 
+          src={item.detailImages[1]} 
           alt="Second slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100 "
-          src={item.image[2]} 
+          src={item.detailImages[2]} 
           alt="Third slide"
         />
       </Carousel.Item>
