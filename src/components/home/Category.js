@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom';
 import ItemListContainer from '../catalog/ItemListContainer';
 
 function Category () {
-    const params = useParams();
+    const { categoryId, categoryName } = useParams();
 
     return (
        <> 
-        <ItemListContainer category={params.category} />
+        <ItemListContainer categoryId={categoryId} categoryName={categoryName} />
        </>
     )
 }

@@ -13,7 +13,7 @@ const Catalog = [
     description:
       "Un recorrido por el barrio de Puerto Madero a través de la historia de las mujeres que dan nombre a sus calles.",
     mainImage: img1,
-    category: "Historia",
+    categoryId: "C1",
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Las calles del barrio Puerto Madero tienen desde 1995 nombres de mujeres argentinas. Por medio de la Ordenanza Nº 49.668, la Ciudad de Buenos Aires ese año dertermió nombrar las calles de Puerto Madero con nombres de destacadas personalidades femeninas de diversas disciplinas. Este paseo recorre sus historias."   
@@ -26,7 +26,7 @@ const Catalog = [
     description:
       "Un paseo por Recoleta conectado por las obras del arquitecto Clorindo Testa.",
     mainImage: img2,
-    category: "Arquitectura",
+    categoryId: "C4",
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
@@ -38,7 +38,7 @@ const Catalog = [
     description:
       "Breve viaje incómodo y fascinante hacia las historias de la primera funcdación de Buenos Aires.",
     mainImage: img3,
-    category: "Historia",
+    categoryId: "C1",
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
@@ -50,7 +50,7 @@ const Catalog = [
     description:
       "Buenos Aires es una de las pocas ciudades en el mundo que fue fundada dos veces. Este paseo recorre las historias de la vez definitiva.",
     mainImage: img3,
-    category: "Historia",
+    categoryId: "C1",
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. "   
@@ -63,7 +63,7 @@ const Catalog = [
     description:
       "Colección de historias breves para escuchar en el colectivo 152.",
     mainImage: img3,
-    category: "Historias en bondi", 
+    categoryId: "C2", 
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
@@ -75,7 +75,7 @@ const Catalog = [
     description:
     "Colección de historias breves para escuchar en el colectivo 126.",
     mainImage: img3,
-    category: "Historias en bondi",
+    categoryId: "C2",
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
@@ -87,7 +87,7 @@ const Catalog = [
     description:
     "Colección de historias breves para escuchar en el colectivo 130.",
     mainImage: img3,
-    category: "Historias en bondi",
+    categoryId: "C2",
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
@@ -99,7 +99,7 @@ const Catalog = [
     description:
       "Una exploración de la huella cultural e industrial de la ciudad a través de las obras de Alvarez.",
     mainImage: img3,
-    category: "Arquitectura",
+    categoryId: "C4",
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
@@ -111,7 +111,7 @@ const Catalog = [
     description: 
       "Conoce la obra de Mariette Lydis en un paseo por sus obras.",
     mainImage: img3,
-    category: "Arte",
+    categoryId: "C3",
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 
@@ -123,7 +123,7 @@ const Catalog = [
     description:
       "Breve recorrido por los puntos más visitados del centro de Buenos Aires.",
     mainImage: img3,
-    category: "Arquitectura",
+    categoryId: "C4",
     detailImages: [PM1, PM2, PM3],
     duration: "40 minutos",
     context: "Sed ac consectetur purus, sed feugiat augue. Etiam in dui commodo, consectetur mi vitae, malesuada orci. Maecenas dictum risus sit amet porttitor congue. Vivamus diam metus, maximus id ipsum vel, pretium semper risus. Duis viverra ac libero ac interdum. Nulla placerat elementum tortor, vel tincidunt ante pellentesque sit amet. Pellentesque nunc est, mattis sit amet metus id, dignissim venenatis felis. " 

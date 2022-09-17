@@ -13,6 +13,10 @@
   padding: 0 10px
 }
 
+.navbar-nav .nav-link   {
+  color: white !important;
+}
+
 .dropdown-link {
   text-decoration: none;
   color: #03242F !important;

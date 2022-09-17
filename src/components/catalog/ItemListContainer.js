@@ -4,7 +4,7 @@ import Catalog from '../../assets/database/Catalog';
 import '../../assets/styles/ItemListContainer.css';
 
 
-function ItemListContainer ({category}) {
+function ItemListContainer ({categoryId, categoryName}) {
    
     const [tours, setTours] = useState([]);
     const [status, setStatus] = useState(`flex`);
@@ -20,19 +20,21 @@ function ItemListContainer ({category}) {
         }
         promiseTours()
         .then((result) => {
-               const tours = result.filter(tour => tour.category === category)           
+               const tours = result.filter(tour => tour.categoryId === categoryId)           
                 setTours(tours)
                 setStatus(`none`)
             })
             .catch ( (err) => { console.log(err) })
-            }, [category])
+            }, [categoryId])
 
-            console.log(tours);
+         
     
     return (
        <> 
         <div className="catalog-container">
-            <h3 className="category-title">{category}</h3>
+            <div className="category-title">
+                <h3 >{categoryName}</h3>
+            </div>
             <div style={{display: status, justifyContent: 'center', paddingTop: '10px'}}>
                 <div className="d-flex justify-content-center">
                     <div className="spinner-border" role="status">

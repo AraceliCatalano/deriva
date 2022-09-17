@@ -18,11 +18,11 @@ function Header() {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto">
                     <Navbar.Text> <Link to="/" className="link">Home</Link> </Navbar.Text>
-                    <NavDropdown title="Paseos" id="basic-nav-dropdown">
-                      <NavDropdown.Item> <Link to="/categoria/Arte" className="dropdown-link">Arte</Link> </NavDropdown.Item>
-                      <NavDropdown.Item> <Link to="/categoria/Historia" className="dropdown-link">Historia</Link> </NavDropdown.Item>
-                      <NavDropdown.Item> <Link to="/categoria/Arquitectura"className="dropdown-link">Arquitectura</Link> </NavDropdown.Item>
-                      <NavDropdown.Item> <Link to="/categoria/Historias en bondi"className="dropdown-link">Historias en bondi</Link> </NavDropdown.Item>
+                    <NavDropdown title="Paseos" id="basic-nav-dropdown" className="link">
+                      <NavDropdown.Item> <Link to="/categoria/C3/Arte" className="dropdown-link">Arte</Link> </NavDropdown.Item>
+                      <NavDropdown.Item> <Link to="/categoria/C1/Historia" className="dropdown-link">Historia</Link> </NavDropdown.Item>
+                      <NavDropdown.Item> <Link to="/categoria/C4/Arquitectura"className="dropdown-link">Arquitectura</Link> </NavDropdown.Item>
+                      <NavDropdown.Item> <Link to="/categoria/C2/Historias en bondi"className="dropdown-link">Historias en bondi</Link> </NavDropdown.Item>
                       {/* <NavDropdown.Divider />
                       <NavDropdown.Item> Gratis </NavDropdown.Item> */}
                   </NavDropdown>

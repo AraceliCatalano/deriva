@@ -24,6 +24,7 @@
 }
 
 .category-title {
+    padding: 10px 0 5px 70px;
     color: #03242F;
-    padding: 10px 0 0 70px;
+    background-color: #7FAF9E;
 }

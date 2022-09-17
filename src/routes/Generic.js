@@ -16,7 +16,7 @@ function Generic() {
     <Routes>
         <Route path="/" element={<Home />} />    
         {/* <Route exact path="/paseos" element={<ItemListContainer />} />   */}
-        <Route exact path="/categoria/:category" element={<Category />} /> 
+        <Route exact path="/categoria/:categoryId/:categoryName" element={<Category />} /> 
         <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         <Route exact path="/bonusTracks" element={<BonusTrackMain />} />  
         <Route exact path="/ayuda" element={<Help />} /> 
