@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg" fixed="bottom">
         <Container className="row text-center">
           <Nav defaultActiveKey="/home" className="flex-column col-4">
             <Navbar.Text> <Link to="/ayuda" className="link">Ayuda</Link> </Navbar.Text>

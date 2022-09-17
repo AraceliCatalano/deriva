@@ -8,7 +8,6 @@ function Home () {
        <> 
         <Banner /> 
         <h2>Catálogo de paseos</h2>
-        <p>{process.env.REACT_APP_PRUEBA}</p>
         <ItemList />
        </>
     )

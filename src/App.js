@@ -1,4 +1,7 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Container, Col, Row } from 'react-bootstrap';
+import { UserAuthContextProvider } from './context/UserAuthContext'
 import Header from './components/Header'
 import Home from './components/Home'
 import ItemListContainer from './components/catalog/ItemListContainer';
@@ -14,9 +17,6 @@ import ForgotPassword from './components/loginComponents/ForgotPassword';
 import SignUp from './components/loginComponents/SignUp';
 import HomeLogin from './components/loginComponents/HomeLogin'
 import ProtectedRoute from './components/ProtectedRoute';
-import { Routes, Route } from 'react-router-dom';
-import { Container, Col, Row } from 'react-bootstrap';
-import { UserAuthContextProvider } from './context/UserAuthContext'
 
 function App() {
   return (
@@ -28,24 +28,24 @@ function App() {
           <Col>
             <UserAuthContextProvider>
               <Routes>
-              <Route 
-                path="/homeLogin" 
-                element={
-                  <ProtectedRoute> 
-                    <HomeLogin />
-                  </ProtectedRoute>} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/restablecerContrasena" element={<ForgotPassword />} />
-                <Route path="/" element={<Home />} />
-                <Route path="/paseos" element={<ItemListContainer />} />    
-                <Route path="/bonusTracks" element={<BonusTrackMain />} />  
-                <Route path="/ayuda" element={<Help />} /> 
-                <Route path="/sobre-deriva" element={<About />} /> 
-                <Route path="/terminos-y-condiciones" element={<TermsAndConditions />} /> 
-                <Route path="/politica-privacidad" element={<PrivacyPolicy />} /> 
+                <Route path="/*" element={<Home />} />
+                <Route exact path="/paseos" element={<ItemListContainer />} />    
+                <Route exact path="/bonusTracks" element={<BonusTrackMain />} />  
+                <Route exact path="/ayuda" element={<Help />} /> 
+                <Route exact path="/sobre-deriva" element={<About />} /> 
+                <Route exact path="/terminos-y-condiciones" element={<TermsAndConditions />} /> 
+                <Route exact path="/politica-privacidad" element={<PrivacyPolicy />} /> 
+                <Route 
+                  exact path="/homeLogin" 
+                  element={
+                    <ProtectedRoute> 
+                      <HomeLogin />
+                    </ProtectedRoute>} />
+                  <Route exact path="/login" element={<Login />} />
+                  <Route exact path="/signup" element={<SignUp />} />
+                  <Route exact path="/restablecerContrasena" element={<ForgotPassword />} />
                 </Routes>
-            </UserAuthContextProvider>
+            </UserAuthContextProvider>  
           </Col>
         </Row>
      </Container>
