@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, FormGroup, Alert, Container } from 'react-bootstrap';
-import '../../assets/App.css'
+import '../../assets/styles/App.css'
 import { useUserAuth } from '../../context/UserAuthContext';
 
 

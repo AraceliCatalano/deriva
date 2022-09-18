@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/App.css'
+import '../../assets/styles/App.css';
 import { Container } from 'react-bootstrap';
 
 
@@ -8,16 +8,17 @@ function Help() {
     <>
       <Container className="mainPageContainer">
         <h2>Ayuda</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adip</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus eu purus eget iaculis. Maecenas maximus a lectus in scelerisque. Suspendisse quam massa, commodo vitae magna ac, consequat ultrices erat. Nam commodo bibendum nunc, a lacinia quam finibus et. Aenean erat justo, scelerisque scelerisque cursus et, auctor ut orci. Vivamus tristique malesuada libero, eu elementum libero vulputate quis. Ut accumsan gravida diam nec congue. Cras ornare eros ut erat tincidunt dictum. Integer a diam augue. Integer nec eros ut urna imperdiet tempus id malesuada tortor. Aenean lectus velit, consectetur ultrices feugiat quis, iaculis eget dolor. Proin sed mollis nisl. Donec finibus convallis tincidunt. Curabitur et feugiat elit, vitae sagittis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ac turpis in urna lacinia suscipit ut sit amet dui.</p>
-        <p>Nulla placerat ante eu turpis posuere porttitor. Cras quis mauris sit amet elit dictum malesuada tincidunt quis sem. Ut vestibulum dolor fringilla purus dictum consequat. Sed venenatis, tellus vel rutrum porttitor, nisl leo fringilla libero, laoreet iaculis sapien justo sed ante. Morbi lacinia egestas justo, vitae bibendum orci laoreet eget. Donec interdum, sapien ut iaculis scelerisque, lacus ligula pulvinar nisl, id scelerisque eros quam accumsan arcu. Nam maximus tincidunt semper. Phasellus cursus, sem ut placerat tincidunt, arcu risus convallis ipsum, eget faucibus urna nibh ac elit. Sed et nibh molestie, convallis ante quis, placerat nisl.</p>
+        <p className="warning">Advertencia: La página se encuentra en desarrollo y algunas de las funcionalidades podrían no estar disponibles.</p>
+        <p>Deriva es una aplicación de paseos autoguiados basada en audios activados por geolocalización.</p>
+        <p>Para iniciar, buscá algún paseo desde la lista principal. Los más próximos a tu ubicación se mostrarán primero en la lista. Cuando encuentres alguno de tu interés, podés seleccionarlo y comenzar. Si el paseo tiene un costo, deberás pasar primero por el proceso de pago. Los audios se reproducirán por streaming utilizando tu conexión móvil.  Por eso, si preferís ahorrar datos, podés bajar el contenido antes de empezar. </p>
+        <p>Una vez que hayas iniciado tu paseo, podrás ver tu ubicación marcada en el mapa. Al ingresar en una zona marcada, se activará el audio correspondiente a esa parada del itinerario. </p>
+        <p>Podés activar los audios manualmente desactivando la opción de reproducción automática.</p>
+        <p>Te recomendamos planear tu ruta antes de iniciar el paseo y guardar el teléfono mientras transitás el paseo para tener una experiencia optimizada y más segura. Recorrer la ciudad con la atención puesta en el teléfono conlleva algunos peligros.</p>
+        <p>Si tenés algún problema, escribinos a ayuda@deriva.com.ar</p>
       </Container>
     </>
   );
 
-
 }
-    
-
 
 export default Help;

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/App.css'
+import '../../assets/styles/App.css';
 import { Container } from 'react-bootstrap';
 
 
@@ -15,7 +15,6 @@ function PrivacyPolicy() {
 
     </>
   );
-
 
 }
 

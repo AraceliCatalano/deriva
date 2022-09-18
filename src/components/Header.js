@@ -4,10 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../assets/images/logoWhite.ico';
-import '../assets/App.css'
+import '../assets/styles/App.css';
 import { Link } from 'react-router-dom';
-
-import CartWidget from './CartWidget';
+import CartWidget from './catalog/CartWidget';
 
 function Header() {
   return (

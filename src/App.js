@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
 import { UserAuthContextProvider } from './context/UserAuthContext'
 import Header from './components/Header'
-import Home from './components/Home'
+import Home from './components/home/Home'
 import ItemListContainer from './components/catalog/ItemListContainer';
 import BonusTrackMain from './components/BonusTrack/BonusTrackMain';
 import Footer from './components/footer/Footer'
