@@ -2,6 +2,7 @@ import React from'react';
 import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import Catalog from '../../assets/database/Catalog';
+import '../../assets/styles/ItemDetailContainer.css';
 import { useParams } from 'react-router-dom';
 
 
@@ -38,7 +39,7 @@ const ItemDetailContainer = () =>{
         {/* Si se esta cargando se muestra el mensaje, sino se muestra el ItemDetail */}
         {
             loading ? 
-            <div style={{paddingTop: 100 }}>
+            <div style={{padding: 100 }}>
                 <div className="d-flex justify-content-center">
                     <div className="spinner-border" role="status">
                         <span className="visually-hidden">Loading...</span>

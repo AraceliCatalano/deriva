@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import { ButtonGroup, ListGroup} from 'react-bootstrap';
+import { ButtonGroup, Col } from 'react-bootstrap';
 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
@@ -20,27 +20,25 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
 
     return (
-        <>                
-            <ListGroup className="list-group-flush" >
-                
-                    <ListGroup.Item className="text-center">
-                        <ButtonGroup size="sm me-2" aria-label="Basic example">
-                            <Button variant="secondary" onClick={reduceQuantity}>-</Button>
-                            <Button variant="secondary">{quantity}</Button>
-                            <Button variant="secondary" onClick={sumQuantity}>+</Button>
-                        </ButtonGroup>
-                        
-                            {
-                                quantity > 0 ?
-                                <Button size="sm" variant="dark" onClick={() => onAdd(quantity)}>
-                                    Agregar al carrito</Button>
-                                :
-                                <Button size="sm" variant="secondary" disabled>
-                                    Agregar al carrito</Button>
-                            }
-                        
-                    </ListGroup.Item>
-                </ListGroup>                         
+        <>
+        
+            <Col  md="auto">
+                <ButtonGroup size="lg me-1" aria-label="Basic example">
+                    <Button variant="secondary" onClick={reduceQuantity}>-</Button>
+                    <Button variant="secondary">{quantity}</Button>
+                    <Button variant="secondary" onClick={sumQuantity}>+</Button>
+                </ButtonGroup>
+            </Col>
+            <Col xs={5}  md="auto" >
+            {
+                quantity > 0 ?
+                <Button size="lg" variant="dark" onClick={() => onAdd(quantity)}>
+                    Agregar al carrito</Button>
+                :
+                <Button size="lg" variant="secondary" disabled>
+                    Agregar al carrito</Button>
+            }    
+            </Col>                         
         </>
     )
 
