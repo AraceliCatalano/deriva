@@ -10,8 +10,13 @@
   
   .link {
     text-decoration: none;
-    padding: 0 10px
+    padding: 0 10px;
+    color: white;
   }
+
+  .link:hover {
+    color: #EEDBAE;
+}
   
   #basic-nav-dropdown  {
     color: white !important;
