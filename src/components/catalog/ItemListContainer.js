@@ -21,7 +21,7 @@ function ItemListContainer ({categoryId, categoryName}) {
 
         promiseTours()
         .then((result) => {
-               const tours = result.filter(tour => tour.categoryId === categoryId)           
+                const tours = result.filter(tour => tour.categoryId === categoryId)           
                 setTours(tours)
                 setStatus(`none`)
             })
