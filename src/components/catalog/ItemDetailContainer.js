@@ -2,6 +2,7 @@ import React from'react';
 import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import Catalog from '../../assets/database/Catalog';
+import '../../assets/styles/ItemDetailContainer.css';
 import { useParams } from 'react-router-dom';
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../components/home/Home'
 import ItemDetailContainer from '../components/catalog/ItemDetailContainer';
+import Cart from '../components/catalog/Cart';
 import BonusTrackMain from '../components/bonusTrack/BonusTrackMain';
 import Help from '../components/footer/Help'
 import PrivacyPolicy from '../components/footer/PrivacyPolicy'
@@ -18,6 +19,7 @@ function Generic() {
         {/* <Route exact path="/paseos" element={<ItemListContainer />} />   */}
         <Route exact path="/categoria/:categoryId/:categoryName" element={<Category />} /> 
         <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+        <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/bonusTracks" element={<BonusTrackMain />} />  
         <Route exact path="/ayuda" element={<Help />} /> 
         <Route exact path="/sobre-deriva" element={<About />} /> 

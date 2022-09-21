@@ -1,6 +1,4 @@
-.item-detail-container {
-    padding: 100px 0 100px 0;
-}
+
 
 .tour-image {
     max-width: 350px;
@@ -9,4 +7,35 @@
 
 .context {
     text-align: justify;
+}
+
+.buy-button button {
+    margin-top: 10px !important;
+    text-align: center;
+    width: 94% !important;
+}
+div.add-button-container {
+    
+    width: 100% !important;
+    margin-right: 0 !important;
+
+}
+
+.cart-buttons-container {
+    max-width: 400px !important;
+    justify-content: space-evenly;
+}
+
+
+
+
+.success {
+    color: #0f534f;
+    font-weight: bold;
+    text-align: center;
+}
+
+.item-info {
+    color: #03242F;
+    font-weight: bold;
 }
