@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import {Link} from "react-router-dom";
 import '../../assets/styles/ItemDetail.css';
 import Carousel from "react-bootstrap/Carousel";
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import ItemCount from "./ItemCount";
+import ItemCount from "./ItemCount";  
 import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({item}) => {
@@ -13,6 +14,7 @@ const ItemDetail = ({item}) => {
   const {addItem} = useContext(CartContext) 
 
   // Mandar en por props de ItemCount luego para probar si sigue andando.
+
   const onAdd = (quantity) => {
     setAdd(!add);
   };
@@ -59,6 +61,7 @@ const ItemDetail = ({item}) => {
             <Row className="buy-button">
               <Link to="/cart" >
                 <Button variant="dark" size="lg"> Ir al carrito </Button>
+
               </Link>                
             </Row>
           </Container>

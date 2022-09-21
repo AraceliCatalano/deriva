@@ -3,12 +3,10 @@ import ItemList from './ItemList';
 import Catalog from '../../assets/database/Catalog';
 import '../../assets/styles/ItemListContainer.css';
 
-
 function ItemListContainer ({categoryId, categoryName}) {
    
     const [tours, setTours] = useState([]);
     const [status, setStatus] = useState(`flex`);
-
  
    useEffect(() => {
         const promiseTours = () => {
@@ -26,9 +24,7 @@ function ItemListContainer ({categoryId, categoryName}) {
                 setStatus(`none`)
             })
             .catch ( (err) => { console.log(err) })
-            }, [categoryId])
-
-         
+            }, [categoryId])      
     
     return (
        <> 

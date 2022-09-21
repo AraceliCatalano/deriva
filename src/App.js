@@ -5,7 +5,6 @@ import Generic from './routes/Generic';
 import Footer from './components/footer/Footer';
 import { CartProvider } from './context/CartContext';
 
-
 function App() {
   return (
    <>
@@ -15,9 +14,7 @@ function App() {
         <Home />
       </Generic>
     </CartProvider>
-
     <Footer />
-   
    </>   
   );
 }
