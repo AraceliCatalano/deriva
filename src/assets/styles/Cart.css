@@ -1,0 +1,11 @@
+.cart-container {
+    margin-bottom: 200px;
+}
+
+.cart-button {
+    width: 100% !important;
+}
+
+.cart-total {
+    justify-content: center !important;
+}

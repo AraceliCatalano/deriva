@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { ButtonGroup, Col } from 'react-bootstrap';
 
-
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ item, stock, initial, addItem }) => {
     
     const [quantity, setQuantity] = useState(initial);
 
@@ -32,7 +31,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             <Col xs={5}  md="auto" >
             {
                 quantity > 0 ?
-                <Button size="lg" variant="dark" onClick={() => onAdd(quantity)}>
+                <Button size="lg" variant="dark" onClick={() => addItem(item, quantity)}>
                     Agregar al carrito</Button>
                 :
                 <Button size="lg" variant="secondary" disabled>
@@ -44,7 +43,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
 }
 
-export default ItemCount
+export default ItemCount;
 
 
 
