@@ -7,7 +7,7 @@ function CartWidget () {
     const { items } = useContext(CartContext);
 
     let itemsInCart = 0;
-    items.map((item) => {itemsInCart =   itemsInCart + item.quantity})
+    items.map((item) => {(itemsInCart) =   itemsInCart + item.quantity})
 
     return (
        <> 
