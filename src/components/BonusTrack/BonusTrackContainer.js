@@ -4,7 +4,7 @@ import '../../assets/styles/App.css';
 import { Tab, Tabs, Accordion } from 'react-bootstrap';
 
 
-function BonusTrackMain () {
+function BonusTrackContainer () {
     return (
        <> 
         <div className="bonusTrackContainer">
@@ -133,4 +133,4 @@ function BonusTrackMain () {
     )
 }
 
-export default BonusTrackMain;
+export default BonusTrackContainer;
