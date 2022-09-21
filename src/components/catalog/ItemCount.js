@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { ButtonGroup, Col } from 'react-bootstrap';
 
-
 const ItemCount = ({ item, stock, initial, addItem }) => {
     
     const [quantity, setQuantity] = useState(initial);
@@ -44,7 +43,7 @@ const ItemCount = ({ item, stock, initial, addItem }) => {
 
 }
 
-export default ItemCount
+export default ItemCount;
 
 
 
