@@ -25,7 +25,7 @@ const ItemDetail = ({item}) => {
       <p>{item.description}</p>
       <Row>
         <Col sm={6}>
-          <Carousel>
+          {/* <Carousel>
             <Carousel.Item>
             <img className="d-block w-100"
               src={item.detailImages[0]} 
@@ -44,7 +44,7 @@ const ItemDetail = ({item}) => {
                 alt="Third slide"
               />
             </Carousel.Item>
-          </Carousel>       
+          </Carousel>        */}
         </Col>
         <Col sm={6}> 
           <p className="context">{item.context}</p> 

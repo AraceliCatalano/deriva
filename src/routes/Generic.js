@@ -2,13 +2,14 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../components/home/Home'
 import ItemDetailContainer from '../components/catalog/ItemDetailContainer';
+import ItemListContainer from '../components/catalog/ItemListContainer';
 import Cart from '../components/catalog/Cart';
 import BonusTrackContainer from '../components/bonusTrack/BonusTrackContainer';
 import Help from '../components/footer/Help'
 import PrivacyPolicy from '../components/footer/PrivacyPolicy';
 import About from '../components/footer/About';
 import TermsAndConditions from '../components/footer/TermsAndConditions'
-import Category from '../components/home/Category';
+
 // Imports for Login with Firebase
 import { UserAuthContextProvider } from '../context/UserAuthContext';
 import Login from '../components/loginComponents/Login';
@@ -24,7 +25,7 @@ function Generic() {
       <Routes>
           <Route path="/" element={<Home />} />    
           {/* <Route exact path="/paseos" element={<ItemListContainer />} />   */}
-          <Route exact path="/categoria/:categoryId/:categoryName" element={<Category />} /> 
+          <Route exact path="/categoria/:category" element={<ItemListContainer />} /> 
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="/bonusTracks" element={<BonusTrackContainer />} />  

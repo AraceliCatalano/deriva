@@ -1,15 +1,15 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import ItemListContainer from '../catalog/ItemListContainer';
+// import React from 'react';
+// import { useParams } from 'react-router-dom';
+// import ItemListContainer from '../catalog/ItemListContainer';
 
-function Category () {
-    const { categoryId, categoryName } = useParams();
+// function Category () {
+//     const { categoryId, categoryName } = useParams();
 
-    return (
-       <> 
-        <ItemListContainer categoryId={categoryId} categoryName={categoryName} />
-       </>
-    )
-}
+//     return (
+//        <> 
+//         <ItemListContainer categoryId={categoryId} categoryName={categoryName} />
+//        </>
+//     )
+// }
 
-export default Category;
+// export default Category;
