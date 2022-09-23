@@ -48,13 +48,21 @@ const ItemDetail = ({item}) => {
           <Container className="cart-buttons-container">
             <Row className="add-button-container">
                 {
-                  add ? <p className="success">¡Agregado! </p> : <ItemCount stock={3} initial={1} onAdd={onAdd}/> 
+                  add 
+                  ? 
+                  <Col >
+                    <Row>
+                    <p className="success">¡Agregado! </p> 
+                    </Row>
+                    <Row className="buy-button">
+                      <Link to="/cart" >
+                        <Button variant="dark"  size="lg" > Finalizar compra </Button>
+                      </Link>                
+                    </Row>
+                  </Col>
+                  : 
+                  <ItemCount stock={3} initial={1} onAdd={onAdd}/> 
                 }  
-            </Row>
-            <Row className="buy-button">
-              <Link to="/cart" >
-                <Button variant="dark"  size="lg" > Ir al carrito </Button>
-              </Link>                
             </Row>
           </Container>
         </Col>  
