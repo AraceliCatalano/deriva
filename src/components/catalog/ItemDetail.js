@@ -9,13 +9,11 @@ import { CartContext } from '../../context/CartContext';
 const ItemDetail = ({item}) => {
 
   const [add, setAdd] = useState(false);
-  
-  const {addItem} = useContext(CartContext) 
-
-  // Mandar en por props de ItemCount luego para probar si sigue andando.
+  const { addItem } = useContext(CartContext);
 
   const onAdd = (quantity) => {
     setAdd(!add);
+    addItem(item, quantity);
   };
  
   return (
@@ -53,15 +51,16 @@ const ItemDetail = ({item}) => {
           <Container className="cart-buttons-container">
             <Row className="add-button-container">
                 {
-                  add ? <p className="success">¡Agregado! </p> : 
-                  <ItemCount onAdd={onAdd} item={item} stock={3} initial={1} addItem={addItem}/> 
+                  add 
+                  ? 
+                  <Row className="buy-button">
+                    <p className="success">¡Agregado! </p> 
+                    <Link to="/cart" >
+                      <Button variant="dark" size="lg">Finalizar compra</Button>
+                    </Link>                
+                  </Row>
+                  : <ItemCount onAdd={onAdd} item={item} stock={3} initial={1} /> 
                 }  
-            </Row>
-            <Row className="buy-button">
-              <Link to="/cart" >
-                <Button variant="dark" size="lg"> Ir al carrito </Button>
-
-              </Link>                
             </Row>
           </Container>
         </Col>  
