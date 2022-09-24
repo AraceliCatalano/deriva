@@ -22,9 +22,7 @@ const ItemDetailContainer = () =>{
           setItemDetail({ id: res.id, ...res.data() })},//FB4- Poner el id en un objeto. 
           setLoading(false))
       }, [id])
-   
-    console.log("item desde IDC", item);
-    
+     
     return (
         <>
         {
