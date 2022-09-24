@@ -63,6 +63,14 @@ h2 {
     align-self: center;
 }
 
+.avatar {
+    border-radius: 50%;
+    max-width: 70px;
+    border: solid 3px #03242F;
+    padding: 3px;
+    margin: 5px; 
+}
+
 /******* END Auth proces  ******/
 
 
