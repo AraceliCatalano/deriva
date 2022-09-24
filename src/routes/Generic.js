@@ -4,7 +4,7 @@ import Home from '../components/home/Home'
 import ItemDetailContainer from '../components/catalog/ItemDetailContainer';
 import ItemListContainer from '../components/catalog/ItemListContainer';
 import Cart from '../components/catalog/Cart';
-import BonusTrackContainer from '../components/bonusTrack/BonusTrackContainer';
+import BonusTrackContainer from '../components/BonusTrack/BonusTrackContainer';
 import Help from '../components/footer/Help'
 import PrivacyPolicy from '../components/footer/PrivacyPolicy';
 import About from '../components/footer/About';
