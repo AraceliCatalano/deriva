@@ -4,7 +4,7 @@ import ItemListContainer from '../catalog/ItemListContainer';
 
 function Category () {
     const { categoryId, categoryName } = useParams();
-
+    
     return (
        <> 
         <ItemListContainer categoryId={categoryId} categoryName={categoryName} />

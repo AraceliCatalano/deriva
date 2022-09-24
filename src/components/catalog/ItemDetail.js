@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {Link} from "react-router-dom";
 import '../../assets/styles/ItemDetail.css';
 import Carousel from "react-bootstrap/Carousel";
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import ItemCount from "./ItemCount";
+import ItemCount from "./ItemCount";  
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({item}) => {
 
   const [add, setAdd] = useState(false);
+  const { addItem } = useContext(CartContext);
 
   const onAdd = (quantity) => {
     setAdd(!add);
+    addItem(item, quantity);
   };
  
   return (
@@ -50,18 +53,13 @@ const ItemDetail = ({item}) => {
                 {
                   add 
                   ? 
-                  <Col >
-                    <Row>
+                  <Row className="buy-button">
                     <p className="success">¡Agregado! </p> 
-                    </Row>
-                    <Row className="buy-button">
-                      <Link to="/cart" >
-                        <Button variant="dark"  size="lg" > Finalizar compra </Button>
-                      </Link>                
-                    </Row>
-                  </Col>
-                  : 
-                  <ItemCount stock={3} initial={1} onAdd={onAdd}/> 
+                    <Link to="/cart" >
+                      <Button variant="dark" size="lg">Finalizar compra</Button>
+                    </Link>                
+                  </Row>
+                  : <ItemCount onAdd={onAdd} item={item} stock={3} initial={1} /> 
                 }  
             </Row>
           </Container>

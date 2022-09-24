@@ -3,13 +3,25 @@ h2 {
     padding-top: 30px;
 }
 
-.link {
-    color: white;
+
+/****** Catalog and tours ******/
+
+.catalog {
+    padding: 10px 50px;
 }
 
-.link:hover {
-    color: white;
+.catalog-title {
+    padding: 100px 20px 20px 20px;
+    color: "#7FAF9E";
+    align-items: center;
 }
+
+.item {
+    width: 18rem;
+    margin-bottom: 20px;
+ }
+
+/******* END Catalog and tours ******/
 
 /******* Bonus Track ******/
 .bonusTrackContainer {
@@ -27,10 +39,31 @@ h2 {
     color: white !important;
 }
 
-
-
-
 /******* END Bonus Track ******/
+
+
+/******* Auth proces  ******/
+
+.box {
+    margin: 100px;
+    border: 1px solid #EEDBAE;
+    border-radius: 15px;
+    max-width: 700px !important;
+
+}
+
+.btn {  
+    font-size: 15px !important;
+    color: white !important;
+}
+
+.g-btn { 
+    border-radius: 7px;
+    width: 90% !important;
+    align-self: center;
+}
+
+/******* END Auth proces  ******/
 
 
 /******* Footer ******/
@@ -38,6 +71,7 @@ h2 {
   .mainPageContainer {
     padding-bottom: 150px;
     text-align: justify;
+    padding-top: 80px;
  }
 
  .about-title {
@@ -46,10 +80,12 @@ h2 {
 
  .twitter-icon {
     background-color: white;
- }
-/******* END Footer ******/
+}
 
 .warning {
     color: #D81921;
     font-weight: bold;
 }
+/******* END Footer ******/
+
+
