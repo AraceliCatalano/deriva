@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { getFirestore, addDoc, collection } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import { Button, Row, Col, Container, Table } from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
@@ -7,6 +8,32 @@ import '../../assets/styles/Cart.css'
 function Cart () {
     // Traigo las constantes pasadas como value en CartProvider y accedo por CartContext.
     const { items, removeItem, clearItems, totalCartPrice } = useContext(CartContext); 
+    const [ orderStatus, setOrderStatus] = useState(false);
+
+    const order = {
+        buyer: {
+            name: "Ara",
+            email: "test@gmail.com"
+        },
+        items: items.map(item => ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity
+        })),
+        total: totalCartPrice()
+    }
+
+    const handleClick = () => {
+        const db = getFirestore();
+        const ordersCollection = collection(db, 'orders');
+        addDoc(ordersCollection, order)
+         .then(({ id }) => 
+            console.log(id)
+            )
+        setOrderStatus(!orderStatus);
+    }
+    console.log(orderStatus);
 
     return (
        <> 
@@ -23,10 +50,8 @@ function Cart () {
                                 </Link>
                             </Col>
                         </Row>
-                    </Container>
+            </Container>
             :
-
-
             <Container className="cart-container p-3">
                 <Row>
                     <Col sm={8}>
@@ -69,16 +94,33 @@ function Cart () {
                         </Table>
                     </Col>
                     <Col sm={4  }>
-                        <Button className="cart-button" variant="dark" onClick={() => clearItems()}>Vaciar carrito</Button>
-                        <Row className="p-3 cart-total">
-                            <h5>Total a pagar:  $ {totalCartPrice()} </h5>
-                        </Row>
-                        <Button className="cart-button" variant="dark">Finalizar compra</Button>
+                    {
+                            orderStatus === false 
+                            ?
+                           <Container>
+                                <Button className="cart-button" variant="dark" onClick={() => clearItems()}>Vaciar carrito</Button>
+                                <Row className="p-3 cart-total">
+                                    <h5>Total a pagar:  $ {totalCartPrice()} </h5>
+                                </Row>
+                            </Container>
+                            :
+                            <p> {""}</p>
+                        }
+
+                        
+                        {
+                            orderStatus === false 
+                            ?
+                            <Button className="cart-button" variant="dark" onClick={handleClick}>
+                                Generar orden de compra
+                            </Button>
+                            :
+                            <p className="success">¡Orden enviada!</p>
+                        }
                     </Col>    
                 </Row>
-                </Container>      
+            </Container>      
         }
-
        </>
     )
 }
