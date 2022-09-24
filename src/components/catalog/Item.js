@@ -9,7 +9,7 @@ function Item ({tour}) {
     return (
        <> 
         <Card className="item">
-        <Card.Img variant="top" src={tour.mainImage} />
+        <Card.Img variant="top" src={tour.mainImage} className="main-image"/>
         <Card.Body>
             <Card.Title>{tour.name}</Card.Title>
             <Card.Text>{tour.description}</Card.Text>
