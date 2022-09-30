@@ -22,7 +22,7 @@ export const  CartProvider = ({children}) => {
             return tourInCart;
         }))
          :
-        setItems([...items,    //Nota: remover spread operator cuando consulte db en Firebase.    
+        setItems([...items,       
                     {id: item.id, 
                      name:item.name,
                      price: item.price,
