@@ -28,7 +28,7 @@ function Header() {
                   </NavDropdown>
                     <Navbar.Text> <Link to="/bonusTracks" className="link">Bonus Track</Link> </Navbar.Text>
                   </Nav>
-                    <Nav className="justify-content-end">
+                  <Nav className="justify-content-end">
                     <Navbar.Text> <Link to="/cart"> <CartWidget/> </Link>  </Navbar.Text  >
                     <Navbar.Text> <Link to="/login" className="link" >Ingresar</Link> </Navbar.Text>
                   </Nav>

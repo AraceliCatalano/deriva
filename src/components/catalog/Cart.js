@@ -73,7 +73,7 @@ function Cart () {
                         <Row className="p-3 cart-total">
                             <h5>Total a pagar:  $ {totalCartPrice()} </h5>
                         </Row>
-                        <Button className="cart-button" variant="dark">Finalizar compra</Button>
+                        <Button className="cart-button" variant="dark">Crear orden de compra</Button>
                     </Col>    
                 </Row>
                 </Container>      
