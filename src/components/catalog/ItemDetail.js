@@ -5,6 +5,9 @@ import Carousel from "react-bootstrap/Carousel";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import ItemCount from "./ItemCount";  
 import { CartContext } from '../../context/CartContext';
+import PM1 from "../../assets/images/PM1.JPG";
+import PM2 from "../../assets/images/PM2.JPG";
+import PM3 from "../../assets/images/PM3.JPG";
 
 const ItemDetail = ({item}) => {
 
@@ -15,7 +18,7 @@ const ItemDetail = ({item}) => {
     setAdd(!add);
     addItem(item, quantity);
   };
- 
+
   return (
 
     <Container className="item-detail-container">
@@ -26,19 +29,19 @@ const ItemDetail = ({item}) => {
           <Carousel>
             <Carousel.Item>
             <img className="d-block w-100"
-              src={item.detailImages[0]} 
+              src={PM1} 
               alt="PM1"
             />
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100 "
-                src={item.detailImages[1]} 
+                src={PM2} 
                 alt="Second slide"
               />
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100 "
-                src={item.detailImages[2]} 
+                src={PM3} 
                 alt="Third slide"
               />
             </Carousel.Item>
@@ -49,7 +52,7 @@ const ItemDetail = ({item}) => {
           <p className="item-info">{item.duration}</p>
           <p className="item-info">${item.price}</p>
           <Container className="cart-buttons-container">
-            <Row className="add-button-container">
+          <Row className="add-button-container">
                 {
                   add 
                   ? 

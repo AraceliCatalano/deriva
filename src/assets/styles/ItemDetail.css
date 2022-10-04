@@ -5,9 +5,6 @@
     max-height: 100px;
 }
 
-.context {
-    text-align: justify;
-}
 
 .buy-button button {
     margin-top: 10px !important;
@@ -27,12 +24,14 @@ div.add-button-container {
 }
 
 
-
-
 .success {
     color: #0f534f;
     font-weight: bold;
     text-align: center;
+}
+
+.context {
+    text-align: justify;
 }
 
 .item-info {

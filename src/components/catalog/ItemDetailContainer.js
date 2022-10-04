@@ -1,57 +1,74 @@
 import React from'react';
 import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
-import Catalog from '../../assets/database/Catalog';
+//import Catalog from '../../assets/database/Catalog';
 import '../../assets/styles/ItemDetailContainer.css';
 import { useParams } from 'react-router-dom';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 
-
-// Conttainer que trae el  detalle del item
 const ItemDetailContainer = () =>{
 
+    const [item, setItemDetail] = useState({});
+    const [loading, setLoading] = useState(true);
+    const {id} = useParams();    
+
+  //Para renderizar una sola vez, agregar [] al final del useEffect.
+  useEffect(() => {
+    const queryFs = getFirestore(); //FB1- Importar el servicio de Firebase
+    const queryItem = doc(queryFs, 'tours', id); //FB2- Crear pointer al dato (doc).
+    getDoc(queryItem) //FB3- Traer el dato (doc) con una promesa (getDoc).
+        .then (res => {
+          setItemDetail({ id: res.id, ...res.data() })},//FB4- Poner el id en un objeto. 
+          setLoading(false))
+      }, [id])
+   
+    console.log("item desde IDC", item);
+    
+    return (
+        <>
+        {
+          loading ? 
+          <div style={{padding: 100 }}>
+              <div className="d-flex justify-content-center">
+                  <div className="spinner-border" role="status">
+                      <span className="visually-hidden">Cargando...</span>
+                  </div>
+              </div>
+          </div>
+          : 
+          <ItemDetail item={item}/> 
+        }
+        </>
+            
+    )
+  }
+  
+  export default ItemDetailContainer;
+   
+
+// Código basado en database/Catalog.js
+
+/* 
     const [item, setItemDetail] = useState([]);
     const [loading, setLoading] = useState(true);
     const params = useParams();
 
     
-  //Para renderizar una sola vez, agregar [] al final del useEffect.
-  useEffect(() => {
-    const getItem = () => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(Catalog)
-        }, 2000)
-      })
-    }
-    getItem()
-      .then((items) => {
-        const item = items.find((item => item.id === Number(params.id)));
-        setItemDetail(item);
-        setLoading(false);
-      })
-  }, [params.id])
-    
- 
-
-    return (
-        <>
-        {/* Si se esta cargando se muestra el mensaje, sino se muestra el ItemDetail */}
-        {
-            loading ? 
-            <div style={{padding: 100 }}>
-                <div className="d-flex justify-content-center">
-                    <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </div>
-                </div>
-            </div>
-            : 
-             <ItemDetail item={item}/>
-            }
-        </>
-            
-    )
-}
-
-export default ItemDetailContainer;
+    //Para renderizar una sola vez, agregar [] al final del useEffect.
+    useEffect(() => {
+      const getItem = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(Catalog)
+          }, 2000)
+        })
+      }
+      getItem()
+        .then((items) => {
+          const item = items.find((item => item.id === Number(params.id)));
+          setItemDetail(item);
+          setLoading(false);
+        })
+    }, [params.id])
+*/

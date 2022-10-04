@@ -4,11 +4,18 @@
     padding: 10px 50px;
 }
 
-
-
 .item {
     width: 18rem;
     margin-bottom: 20px;
+ }
+
+ .main-image {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
  }
 
  /******* END Catalog and tours ******/
