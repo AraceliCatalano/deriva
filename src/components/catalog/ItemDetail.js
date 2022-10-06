@@ -12,8 +12,7 @@ import PM3 from "../../assets/images/PM3.JPG";
 const ItemDetail = ({item}) => {
 
   const [add, setAdd] = useState(false);
-  
-  const {addItem} = useContext(CartContext) 
+  const { addItem } = useContext(CartContext);
 
   const onAdd = (quantity) => {
     setAdd(!add);

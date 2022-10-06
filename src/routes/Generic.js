@@ -4,6 +4,7 @@ import Home from '../components/home/Home'
 import ItemDetailContainer from '../components/catalog/ItemDetailContainer';
 import ItemListContainer from '../components/catalog/ItemListContainer';
 import Cart from '../components/catalog/Cart';
+
 import BonusTrackContainer from '../components/BonusTrack/BonusTrackContainer';
 import Help from '../components/footer/Help'
 import PrivacyPolicy from '../components/footer/PrivacyPolicy';
@@ -20,6 +21,7 @@ import ProtectedRoute from './ProtectedRoute';
 
 function Generic() {
   return (
+
    <>  
    <UserAuthContextProvider>
       <Routes>
@@ -29,11 +31,13 @@ function Generic() {
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="/bonusTracks" element={<BonusTrackContainer />} />  
+
           <Route exact path="/ayuda" element={<Help />} /> 
           <Route exact path="/sobre-deriva" element={<About />} /> 
           <Route exact path="/terminos-y-condiciones" element={<TermsAndConditions />} /> 
           <Route exact path="/politica-privacidad" element={<PrivacyPolicy />} />  
           <Route 
+
                   exact path="/homeLogin" 
                   element={
                     <ProtectedRoute> 
@@ -44,6 +48,7 @@ function Generic() {
             <Route exact path="/restablecerContrasena" element={<ForgotPassword />} />              
       </Routes>        
     </UserAuthContextProvider>     
+
    </>   
   );
 }

@@ -94,6 +94,7 @@ function Cart () {
                         </Table>
                     </Col>
                     <Col sm={4  }>
+
                     {
                             orderStatus === false 
                             ?
@@ -117,6 +118,7 @@ function Cart () {
                             :
                             <p className="success">¡Orden enviada!</p>
                         }
+
                     </Col>    
                 </Row>
             </Container>      
