@@ -1,20 +1,20 @@
 import React, { useContext, useState } from 'react';
-import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import { Button, Row, Col, Container, Table } from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
-import '../../assets/styles/Cart.css'
+import '../../assets/styles/Cart.css';
+import swal from 'sweetalert';
+import { db, updateStock } from '../../firebase-config';
 
 function Cart () {
     // Traigo las constantes pasadas como value en CartProvider y accedo por CartContext.
     const { items, removeItem, clearItems, totalCartPrice } = useContext(CartContext); 
     const [ orderStatus, setOrderStatus] = useState(false);
+    const [buyer, setBuyer] = useState({name:'', email: '', phone:''});
 
     const order = {
-        buyer: {
-            name: "Ara",
-            email: "test@gmail.com"
-        },
+        ...buyer,
         items: items.map(item => ({
             id: item.id,
             name: item.name,
@@ -24,16 +24,59 @@ function Cart () {
         total: totalCartPrice()
     }
 
-    const handleClick = () => {
-        const db = getFirestore();
-        const ordersCollection = collection(db, 'orders');
-        addDoc(ordersCollection, order)
-         .then(({ id }) => 
-            console.log(id)
-            )
-        setOrderStatus(!orderStatus);
+    const clickPurchase = async (order) =>{
+       const newOrder = await addDoc(collection(db, "orders"), {...order, date: serverTimestamp()})                          
+        return newOrder;   
     }
-    console.log(orderStatus);
+
+    const handlerSubmit = async(e) => {  
+        e.preventDefault();
+        if (order.name !== "" && order.phone !== "" && order.email !== "") {
+            clickPurchase(order)
+                .then((res) => {
+                    new swal({
+                        title: "Orden enviada",
+                        text: `Número de de orden: ${res.id}`,
+                        icon: "success",
+                        button: "Ok",
+                    })
+                })
+                .then(() => items.forEach((item) => updateStock(item.id, item.quantity)))
+                .then(() => clearItems())
+                .catch(
+                    (err) => new swal(`Hubo un Error!`, "Inténtalo nuevamente", "error")
+                )
+        } else {
+            new swal({
+                title: "Completa los campos correctamente",
+                text: "Revisá los datos ingresados y volvé a intentar enviar la orden.",
+                icon: "error",
+                button: "Ok",
+            })
+        }
+    }
+
+    const handlerChange = (e) => {
+        setBuyer({
+            ...buyer,
+            [e.target.name]: e.target.value,
+            
+        })
+    }
+            const handleClick= () => {
+            setOrderStatus(!orderStatus)
+            }
+
+    // const handleClick = () => {
+    //     const db = getFirestore();
+    //     const ordersCollection = collection(db, 'orders');
+    //     addDoc(ordersCollection, order)
+    //      .then(({ id }) => 
+    //         console.log(id)
+    //         )
+    //     setOrderStatus(!orderStatus);
+    // }
+    // console.log(orderStatus);
 
     return (
        <> 
@@ -54,14 +97,13 @@ function Cart () {
             :
             <Container className="cart-container p-3">
                 <Row>
-                    <Col sm={8}>
+                    <Col sm={6}>
                         <h3>Tu selección</h3>
                     </Col>
-                    <Col sm={4}>
-                    </Col>
+                    
                 </Row>
                 <Row>
-                    <Col sm={8}>
+                    <Col sm={6}>
                         <Table responsive="sm">
                             <thead>
                             <tr>
@@ -93,7 +135,7 @@ function Cart () {
                             </tbody>
                         </Table>
                     </Col>
-                    <Col sm={4  }>
+                    <Col sm={6}>
 
                     {
                             orderStatus === false 
@@ -116,7 +158,43 @@ function Cart () {
                                 Generar orden de compra
                             </Button>
                             :
-                            <p className="success">¡Orden enviada!</p>
+                            <>
+                            <Container>
+                            <h5>Completa con tus datos para finalizar la compra</h5>
+								<form
+                                    
+									onSubmit={handlerSubmit}
+									onChange={handlerChange}
+									className="d-flex flex-column align-center container mt-2 mb-3"
+								>
+									<input
+										className="form-control mb-2"
+										type="text"
+										placeholder="Nombre"
+										name="name"
+										defaultValue={order.name}
+									/>
+									<input
+										className="form-control mb-2"
+										type="number"
+										placeholder="Telefono"
+										name="phone"
+										defaultValue={order.phone}
+									/>
+									<input
+										className="form-control mb-2"
+										type="email"
+										placeholder="Email"
+										name="email"
+										defaultValue={order.email}
+									/>
+                                
+									<Button className="btn btn-success d-block mt-2" variant="dark" >
+										Finalizar orden
+									</Button>
+								</form>
+                                </Container>
+                                </>
                         }
 
                     </Col>    

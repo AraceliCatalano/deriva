@@ -2,7 +2,8 @@ import React, { useEffect, useState} from 'react';
 import ItemList from './ItemList';
 //import Catalog from '../../assets/database/Catalog';
 import '../../assets/styles/ItemListContainer.css';
-import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore'; //FB1- Importar el servicio de Firebase
+import { db } from '../../firebase-config';
 import { useParams } from 'react-router-dom';
 
 function ItemListContainer () {
@@ -11,9 +12,8 @@ function ItemListContainer () {
     const [loading, setLoading] = useState(`flex`);
     const { category } = useParams(); 
  
-   useEffect(() => {
-            const queryFs = getFirestore(); //FB1- Importar el servicio de Firebase
-            const queryTours = collection(queryFs, 'tours'); //FB2- Crear pointer a mi collection.
+   useEffect(() => {         
+            const queryTours = collection(db , 'tours'); //FB2- Crear pointer a mi collection.
             if (category) {
                 const queryByCategory = query(queryTours, where('category', '==', category )) 
                 getDocs(queryByCategory) //FB3- Traer mi collection con una promesa (getDocs).
