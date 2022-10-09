@@ -45,28 +45,3 @@ const ItemDetailContainer = () =>{
   export default ItemDetailContainer;
    
 
-// Código basado en database/Catalog.js
-
-/* 
-    const [item, setItemDetail] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const params = useParams();
-
-    
-    //Para renderizar una sola vez, agregar [] al final del useEffect.
-    useEffect(() => {
-      const getItem = () => {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve(Catalog)
-          }, 2000)
-        })
-      }
-      getItem()
-        .then((items) => {
-          const item = items.find((item => item.id === Number(params.id)));
-          setItemDetail(item);
-          setLoading(false);
-        })
-    }, [params.id])
-*/

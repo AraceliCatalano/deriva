@@ -4,6 +4,7 @@ import Home from '../components/home/Home'
 import ItemDetailContainer from '../components/catalog/ItemDetailContainer';
 import ItemListContainer from '../components/catalog/ItemListContainer';
 import Cart from '../components/catalog/Cart';
+import OrderDetail from '../components/catalog/OrderDetail';
 
 import BonusTrackContainer from '../components/BonusTrack/BonusTrackContainer';
 import Help from '../components/footer/Help'
@@ -29,6 +30,7 @@ function Generic() {
           {/* <Route exact path="/paseos" element={<ItemListContainer />} />   */}
           <Route exact path="/categoria/:category" element={<ItemListContainer />} /> 
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+          <Route exact path="/order/:id" element={<OrderDetail />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="/bonusTracks" element={<BonusTrackContainer />} />  
 

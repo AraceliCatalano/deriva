@@ -1,11 +1,11 @@
 .catalog-title {
     color: "#7FAF9E";
-    padding: 70px 0 0 70px;
+    padding: 30px 0 0 100px;
 }
 
 .catalog-container {
     justify-content: space-around;
-   
+    padding: 25px 0 100px 0;    
 }
 
 .categories-container {

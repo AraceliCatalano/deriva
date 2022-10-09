@@ -7,6 +7,8 @@ export const CartContext = createContext([]);
 export const  CartProvider = ({children}) => {
     const [items, setItems] = useState([]); //No los recibe, los setea con addItem (que recibe de ItemDetail)
 
+
+
     const isInCart = (id) => {
       const tourFoundInCart = items.find(item => item.id === id);
       return tourFoundInCart;
@@ -41,6 +43,8 @@ export const  CartProvider = ({children}) => {
     const totalCartPrice = () => {
         return items.reduce((previous, current) => previous + current.quantity * current.price, 0);
     }
+
+    
 
     
 

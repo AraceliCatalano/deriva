@@ -6,7 +6,7 @@ import { useUserAuth } from '../../context/UserAuthContext';
 const HomeLogin = () => {
     const {user, logOut} = useUserAuth();
     const navigate = useNavigate();
-    console.log(user);
+
     const handleLogout = async () => {
         try {
             await logOut();
@@ -17,15 +17,15 @@ const HomeLogin = () => {
     }
     return (
         <>
-            <Container className="p-4 "> 
+            <Container className="p-4 profile"> 
             <Row>
                 <Col sm={2}>
                     <img className="avatar" src="https://firebasestorage.googleapis.com/v0/b/deriva-debe3.appspot.com/o/avatars%2FDefaultAvatar.png?alt=media&token=d480b693-fad2-415a-8674-ed87155d0ee2" alt="default avatar" />
                 </Col>
                 <Col sm={8}>
                     <Row >
-                    <h3>Nombre del usuario</h3>
-                     <h5 style={{marginLeft: 0}}>{user && user.email}</h5>    
+                        <h3>{ user.displayName ? user && user.displayName : "Bienvenido/a"}</h3>
+                        <h4 style={{marginLeft: 0}}>{user && user.email}</h4>    
                     </Row>
                 </Col>
                 <Col sm={2}>
