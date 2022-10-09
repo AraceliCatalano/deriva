@@ -38,8 +38,8 @@ function Cart () {
             clickPurchase(order)
                 .then((res) => {
                     new swal({
-                        title: "Orden enviada",
-                        text: `Número de de orden: ${res.id}`,
+                        title: "Tu orden fue enviada",
+                        text: `Orden número: ${res.id}`,
                         icon: "success",
                         button: "Ok",
                     })
@@ -47,12 +47,12 @@ function Cart () {
                 .then(() => items.forEach((item) => updateStock(item.id, item.quantity)))
                 .then(() => clearItems())
                 .catch(
-                    (err) => new swal(`Hubo un Error!`, "Inténtalo nuevamente", "error")
+                    (err) => new swal(`Error`, "Por favor, intentá nuevamente.", "error")
                 )
         } else {
             new swal({
-                title: "Completa los campos correctamente",
-                text: "Revisá los datos ingresados y volvé a intentar enviar la orden.",
+                title: "Debés completar todos los campos correctamente.",
+                text: "Revisá los datos ingresados y volvé a enviar la orden.",
                 icon: "error",
                 button: "Ok",
             })

@@ -17,14 +17,14 @@ const HomeLogin = () => {
     }
     return (
         <>
-            <Container className="p-4 "> 
+            <Container className="p-4 profile"> 
             <Row>
                 <Col sm={2}>
                     <img className="avatar" src="https://firebasestorage.googleapis.com/v0/b/deriva-debe3.appspot.com/o/avatars%2FDefaultAvatar.png?alt=media&token=d480b693-fad2-415a-8674-ed87155d0ee2" alt="default avatar" />
                 </Col>
                 <Col sm={8}>
                     <Row >
-                    <h3>Nombre del usuario</h3>
+                    <h3>{ user.displayName ? user && user.displayName : "Bienvenido/a"}</h3>
                      <h5 style={{marginLeft: 0}}>{user && user.email}</h5>    
                     </Row>
                 </Col>

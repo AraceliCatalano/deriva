@@ -69,6 +69,10 @@ h2 {
     border: solid 3px #03242F;
     padding: 3px;
     margin: 5px; 
+} 
+
+.profile {
+    margin-top: 80px;
 }
 
 /******* END Auth proces  ******/
