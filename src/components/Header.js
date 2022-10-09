@@ -10,7 +10,7 @@ function Header() {
   return (
     <>
       <div className="header">
-          <Navbar bg="dark" variant="dark" expand="lg">
+          <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
             <Container>
               <img src={logo} alt="logo" className="logo"/>
               <Navbar.Brand ><Link to="/" className="link">Deriva</Link></Navbar.Brand>

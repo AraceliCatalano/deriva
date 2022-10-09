@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 // import { getStorage, ref, uploadBytes, getDownloadURL, getBytes } from 'firebase/storage';
-// import { getFirestore, collection, addDoc, getDoc, query, where, setDoc, deleteDoc } from 'firebase/firestore';
+ import { getFirestore, getDoc, updateDoc, doc } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_APIKEY,
@@ -24,8 +24,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
 export const auth =getAuth(app);
-// const db = getFirestore(app);
+export const db = getFirestore(app);
 // const storage = getStorage(app);
+
+// Manejar stock --> plus
+export const updateStock = async (id, quantity) => {
+	const item = await getDoc(doc(db, "tours", id))
+	await updateDoc(doc(db, "tours", id), {
+		stock: item.data().stock - quantity,
+	})
+}
 export default app;
 //Esto no garantiza tener FB DD, eso se crea aparte.
 

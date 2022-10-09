@@ -1,12 +1,78 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import { Button, Row, Col, Container, Table } from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
-import '../../assets/styles/Cart.css'
+import '../../assets/styles/Cart.css';
+import swal from 'sweetalert';
+import { db, updateStock } from '../../firebase-config';
 
 function Cart () {
     // Traigo las constantes pasadas como value en CartProvider y accedo por CartContext.
     const { items, removeItem, clearItems, totalCartPrice } = useContext(CartContext); 
+    const [ orderStatus, setOrderStatus] = useState(false);
+    const [ buyer, setBuyer] = useState({name:'', email: '', phone:''});
+
+    const order = {
+        ...buyer,
+        items: items.map(item => ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity
+        })),
+        total: totalCartPrice()
+    }
+
+    const clickPurchase = async (order) =>{
+       const newOrder = await addDoc(collection(db, "orders"), {...order, date: serverTimestamp()})                          
+        return newOrder;   
+       
+    }
+
+    
+
+    const handlerSubmit = async(e) => {  
+        e.preventDefault();
+        if (order.name !== "" && order.phone !== "" && order.email !== "") {
+            clickPurchase(order)
+                .then((res) => {
+                    new swal({
+                        title: "Orden enviada",
+                        text: `Número de de orden: ${res.id}`,
+                        icon: "success",
+                        button: "Ok",
+                    })
+                })
+                .then(() => items.forEach((item) => updateStock(item.id, item.quantity)))
+                .then(() => clearItems())
+                .catch(
+                    (err) => new swal(`Hubo un Error!`, "Inténtalo nuevamente", "error")
+                )
+        } else {
+            new swal({
+                title: "Completa los campos correctamente",
+                text: "Revisá los datos ingresados y volvé a intentar enviar la orden.",
+                icon: "error",
+                button: "Ok",
+            })
+        }
+    }
+
+    const handlerChange = (e) => {
+        setBuyer({
+            ...buyer,
+            [e.target.name]: e.target.value,
+            
+        })
+        
+    }
+    
+    const handleClick= () => {
+        setOrderStatus(!orderStatus)
+    }
+
+    
 
     return (
        <> 
@@ -23,20 +89,17 @@ function Cart () {
                                 </Link>
                             </Col>
                         </Row>
-                    </Container>
+            </Container>
             :
-
-
             <Container className="cart-container p-3">
                 <Row>
-                    <Col sm={8}>
+                    <Col sm={6}>
                         <h3>Tu selección</h3>
                     </Col>
-                    <Col sm={4}>
-                    </Col>
+                    
                 </Row>
                 <Row>
-                    <Col sm={8}>
+                    <Col sm={6}>
                         <Table responsive="sm">
                             <thead>
                             <tr>
@@ -68,17 +131,72 @@ function Cart () {
                             </tbody>
                         </Table>
                     </Col>
-                    <Col sm={4  }>
-                        <Button className="cart-button" variant="dark" onClick={() => clearItems()}>Vaciar carrito</Button>
-                        <Row className="p-3 cart-total">
-                            <h5>Total a pagar:  $ {totalCartPrice()} </h5>
-                        </Row>
-                        <Button className="cart-button" variant="dark">Crear orden de compra</Button>
+                    <Col sm={6}>
+
+                    {
+                            orderStatus === false 
+                            ?
+                           <Container>
+                                <Button className="cart-button" variant="dark" onClick={() => clearItems()}>Vaciar carrito</Button>
+                                <Row className="p-3 cart-total">
+                                    <h5>Total a pagar:  $ {totalCartPrice()} </h5>
+                                </Row>
+                            </Container>
+                            :
+                            <p> {""}</p>
+                        }
+
+                        
+                        {
+                            orderStatus === false 
+                            ?
+                            <Button className="cart-button" variant="dark" onClick={handleClick}>
+                                Generar orden de compra
+                            </Button>
+                            :
+                            <>
+                            <Container>
+                            <h5>Completa con tus datos para finalizar la compra</h5>
+								<form
+                                    
+									onSubmit={handlerSubmit}
+									onChange={handlerChange}
+									className="d-flex flex-column align-center container mt-2 mb-3"
+								>
+									<input
+										className="form-control mb-2"
+										type="text"
+										placeholder="Nombre"
+										name="name"
+										defaultValue={order.name}
+									/>
+									<input
+										className="form-control mb-2"
+										type="number"
+										placeholder="Telefono"
+										name="phone"
+										defaultValue={order.phone}
+									/>
+									<input
+										className="form-control mb-2"
+										type="email"
+										placeholder="Email"
+										name="email"
+										defaultValue={order.email}
+									/>
+                                
+									<button className="btn btn-success d-block mt-2" variant="dark" >
+										Finalizar orden
+									</button>
+								</form>
+                                </Container>
+                                </>
+                        }
+
                     </Col>    
                 </Row>
-                </Container>      
+            </Container>      
         }
-
        </>
     )
 }
