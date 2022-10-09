@@ -1,6 +1,8 @@
 /****** Banner image ******/
 .banner {
     width: 100% !important;
+    height: 350px;
+    padding: 50px 20px 0 20px
 }
 /****** END Banner image ******/
 

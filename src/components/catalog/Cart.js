@@ -11,7 +11,7 @@ function Cart () {
     // Traigo las constantes pasadas como value en CartProvider y accedo por CartContext.
     const { items, removeItem, clearItems, totalCartPrice } = useContext(CartContext); 
     const [ orderStatus, setOrderStatus] = useState(false);
-    const [buyer, setBuyer] = useState({name:'', email: '', phone:''});
+    const [ buyer, setBuyer] = useState({name:'', email: '', phone:''});
 
     const order = {
         ...buyer,
@@ -27,7 +27,10 @@ function Cart () {
     const clickPurchase = async (order) =>{
        const newOrder = await addDoc(collection(db, "orders"), {...order, date: serverTimestamp()})                          
         return newOrder;   
+       
     }
+
+    
 
     const handlerSubmit = async(e) => {  
         e.preventDefault();
@@ -62,21 +65,14 @@ function Cart () {
             [e.target.name]: e.target.value,
             
         })
+        
     }
-            const handleClick= () => {
-            setOrderStatus(!orderStatus)
-            }
+    
+    const handleClick= () => {
+        setOrderStatus(!orderStatus)
+    }
 
-    // const handleClick = () => {
-    //     const db = getFirestore();
-    //     const ordersCollection = collection(db, 'orders');
-    //     addDoc(ordersCollection, order)
-    //      .then(({ id }) => 
-    //         console.log(id)
-    //         )
-    //     setOrderStatus(!orderStatus);
-    // }
-    // console.log(orderStatus);
+    
 
     return (
        <> 
@@ -189,9 +185,9 @@ function Cart () {
 										defaultValue={order.email}
 									/>
                                 
-									<Button className="btn btn-success d-block mt-2" variant="dark" >
+									<button className="btn btn-success d-block mt-2" variant="dark" >
 										Finalizar orden
-									</Button>
+									</button>
 								</form>
                                 </Container>
                                 </>

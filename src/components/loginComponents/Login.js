@@ -72,10 +72,6 @@ const Login = () => {
              
                 
             </Container>
-            
-
-            
-    
         </>
     )
 }
