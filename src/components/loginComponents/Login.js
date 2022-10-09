@@ -26,7 +26,7 @@ const Login = () => {
         e.preventDefault();
         try {
             await googleSignIn();
-            navigate("/homeLogin");
+            navigate("/profile");
         } catch (err) {
             setError(err.message);
         }

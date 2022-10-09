@@ -3,7 +3,7 @@ import { Button, Container, Row, Col, Table } from 'react-bootstrap';
 import { useNavigate } from "react-router";
 import { useUserAuth } from '../../context/UserAuthContext';
 
-const HomeLogin = () => {
+const Profile = () => {
     const {user, logOut} = useUserAuth();
     const navigate = useNavigate();
     console.log(user);
@@ -156,4 +156,4 @@ const HomeLogin = () => {
     );
 };
 
-export default HomeLogin;
+export default Profile;
