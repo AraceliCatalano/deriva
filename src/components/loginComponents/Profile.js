@@ -1,9 +1,9 @@
-import React from 'react';
+git push -u origin developmentimport React from 'react';
 import { Button, Container, Row, Col, Table } from 'react-bootstrap';
 import { useNavigate } from "react-router";
 import { useUserAuth } from '../../context/UserAuthContext';
 
-const HomeLogin = () => {
+const Profile = () => {
     const {user, logOut} = useUserAuth();
     const navigate = useNavigate();
 
@@ -24,8 +24,8 @@ const HomeLogin = () => {
                 </Col>
                 <Col sm={8}>
                     <Row >
-                        <h3>{ user.displayName ? user && user.displayName : "Bienvenido/a"}</h3>
-                        <h4 style={{marginLeft: 0}}>{user && user.email}</h4>    
+                    <h3>{ user.displayName ? user && user.displayName : "Bienvenido/a"}</h3>
+                     <h5 style={{marginLeft: 0}}>{user && user.email}</h5>    
                     </Row>
                 </Col>
                 <Col sm={2}>
@@ -156,4 +156,4 @@ const HomeLogin = () => {
     );
 };
 
-export default HomeLogin;
+export default Profile;

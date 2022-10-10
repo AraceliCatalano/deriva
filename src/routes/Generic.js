@@ -18,7 +18,7 @@ import { UserAuthContextProvider } from '../context/UserAuthContext';
 import Login from '../components/loginComponents/Login';
 import ForgotPassword from '../components/loginComponents/ForgotPassword';
 import SignUp from '../components/loginComponents/SignUp';
-import HomeLogin from '../components/loginComponents/HomeLogin'
+import Profile from '../components/loginComponents/Profile'
 import ProtectedRoute from './ProtectedRoute';
 
 function Generic() {
@@ -41,10 +41,10 @@ function Generic() {
           <Route exact path="/politica-privacidad" element={<PrivacyPolicy />} />  
           <Route 
 
-                  exact path="/homeLogin" 
+                  exact path="/profile" 
                   element={
                     <ProtectedRoute> 
-                      <HomeLogin />
+                      <Profile />
                     </ProtectedRoute>} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<SignUp />} />
