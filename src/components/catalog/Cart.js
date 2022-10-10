@@ -40,12 +40,6 @@ function Cart() {
     if (order.name !== "" && order.phone !== "" && order.email !== "") {
       clickPurchase(order)
         .then((res) => {
-          // new swal({
-          //     title: "Orden enviada",
-          //     text: `Número de de orden: ${res.id}`,
-          //     icon: "success",
-          //     button: "Ok",
-          // })
           setOrderId(res.id);
         })
         .then(() =>
@@ -87,23 +81,19 @@ function Cart() {
                 
                 <Link to={`/order/${orderId}`}>
                       <Button variant="dark" size="md" className="m-2">
-                        {" "}
                         Ver detalle
                       </Button>
                 </Link>
                 <Link to="/">
                       <Button variant="dark" size="md"  className="m-2">
-                        {" "}
                         Seguir comprando
                       </Button>
                 </Link>
             </Container>
             </>
           ) : (
-            <Row className="no-selection">
-              
-                <h4>No seleccionaste ningún paseo aún.</h4>
-              
+            <Row className="no-selection">           
+                <h4>No seleccionaste ningún paseo aún.</h4>            
                 <Link to="/">
                   <Button variant="dark" size="md">
                     {" "}
@@ -115,12 +105,9 @@ function Cart() {
           )}
         </Container>
       ) : (
-        <Container className="cart-container p-3">
-       
+        <Container className="cart-container p-3"> 
             
               <h3 className="selection-title">Tu selección</h3>
-            
-        
           <Row>
             <Col sm={6}>
               <Table responsive="sm">

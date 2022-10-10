@@ -10,20 +10,21 @@ const OrderDetail = () =>{
 
     const [orderDetail, setOrderDetail] = useState({});
     const [loading, setLoading] = useState(true);
-    const {id} = useParams();    
-    
-
+    const {id} = useParams();   
+    const [orderItems, setOrderItems] = useState([])
 
     useEffect(() => {
         const queryOrder = doc(db , 'orders', id);
         getDoc(queryOrder) 
           .then (res => {
-            setOrderDetail({ id: res.id, ...res.data() })},
-            setLoading(false))
-    }, [id]);
+            setOrderDetail({ id: res.id, ...res.data() })
+            setOrderItems([ ...res.data().items ])
+          })
+            setLoading(false)       
+    }, [id]);   
 
     
-      
+
     return (
         <>
         {
@@ -54,19 +55,21 @@ const OrderDetail = () =>{
                         <Col sm={4}> <p className="order-field">Total:</p> </Col>
                         <Col sm={3}>${orderDetail.total}   </Col>  
                    </Row>
-                   {/* <Row>
+                   <Row>
                     <Col sm={4}> <p className="order-field">Paseo/s incluido/s:</p> </Col>
                     <Col>
+                   
                         {
-                            [orderDetail.items].map((tour, i) =>
-                            <Row key={i}>
+                            
+                            orderItems.map((tour) =>
+                            <div key={tour.id}>
                                 <p> {tour.name}</p>
                                 
-                            </Row>
+                            </div>
                                 )
                             }
                      </Col>  
-                     </Row> */}
+                     </Row>
                 </Container>
                 
             </>

@@ -5,17 +5,17 @@
 }
 .order-containter {
     margin: 10px 0 350px 80px;
-    padding: 5px ;
+    padding: 5px 5px 5px 50px;
     border: solid 1px #7FAF9E;
 
 }
 
  h3 {
-    padding: 10px 0 0 80px ;
+    padding: 10px 0 0 0 !important ;
 }
 
 h5 {
-    padding: 10px 0 0 90px !important;
+    padding: 10px 0 0 70px !important;
 }
 
 .order-field {
