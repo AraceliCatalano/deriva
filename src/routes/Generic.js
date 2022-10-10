@@ -5,6 +5,7 @@ import ItemDetailContainer from '../components/catalog/ItemDetailContainer';
 import ItemListContainer from '../components/catalog/ItemListContainer';
 import Cart from '../components/catalog/Cart';
 import OrderDetail from '../components/catalog/OrderDetail';
+import NotFound from '../components/NotFound';
 
 import BonusTrackContainer from '../components/BonusTrack/BonusTrackContainer';
 import Help from '../components/footer/Help'
@@ -47,7 +48,8 @@ function Generic() {
                     </ProtectedRoute>} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<SignUp />} />
-            <Route exact path="/restablecerContrasena" element={<ForgotPassword />} />              
+            <Route exact path="/restablecerContrasena" element={<ForgotPassword />} />    
+            <Route path="*" element={<NotFound />} />  
       </Routes>        
     </UserAuthContextProvider>     
 
