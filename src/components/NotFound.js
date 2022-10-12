@@ -6,10 +6,8 @@ function NotFound(){
         <div className="not-found">
             <h2>Error 404 - Página no encontrada</h2>
             
-        </div>
-        
+        </div>        
     )
 }
-
 
 export default NotFound;

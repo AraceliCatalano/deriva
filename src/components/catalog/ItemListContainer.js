@@ -1,8 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import ItemList from './ItemList';
-//import Catalog from '../../assets/database/Catalog';
 import '../../assets/styles/ItemListContainer.css';
-import { collection, getDocs, query, where } from 'firebase/firestore'; //FB1- Importar el servicio de Firebase
+import { collection, getDocs, query, where } from 'firebase/firestore'; 
 import { db } from '../../firebase-config';
 import { useParams } from 'react-router-dom';
 
@@ -13,15 +12,15 @@ function ItemListContainer () {
     const { category } = useParams(); 
  
    useEffect(() => {         
-            const queryTours = collection(db , 'tours'); //FB2- Crear pointer a mi collection.
+            const queryTours = collection(db , 'tours'); 
             if (category) {
                 const queryByCategory = query(queryTours, where('category', '==', category )) 
-                getDocs(queryByCategory) //FB3- Traer mi collection con una promesa (getDocs).
-                .then(res => setTours(res.docs.map(tour => ({ id: tour.id, ...tour.data() }))), //FB4- Poner el id en un objeto. 
+                getDocs(queryByCategory) 
+                .then(res => setTours(res.docs.map(tour => ({ id: tour.id, ...tour.data() }))), 
                 setLoading(`none`))
             } else {
-                getDocs(queryTours) //FB3- Traer mi collection con una promesa (getDocs).
-                .then(res => setTours(res.docs.map(tour => ({ id: tour.id, ...tour.data() }))), //FB4- Poner el id en un objeto. 
+                getDocs(queryTours) 
+                .then(res => setTours(res.docs.map(tour => ({ id: tour.id, ...tour.data() }))),  
                 setLoading(`none`))
             }
         }, [category])

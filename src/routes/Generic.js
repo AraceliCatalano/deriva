@@ -28,7 +28,6 @@ function Generic() {
    <UserAuthContextProvider>
       <Routes>
           <Route path="/" element={<Home />} />    
-          {/* <Route exact path="/paseos" element={<ItemListContainer />} />   */}
           <Route exact path="/categoria/:category" element={<ItemListContainer />} /> 
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/order/:id" element={<OrderDetail />} />

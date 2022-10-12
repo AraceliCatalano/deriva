@@ -2,8 +2,6 @@ import React from 'react';
 import Banner from './Banner';
 import ItemListContainer from '../../components/catalog/ItemListContainer';
 
-
-
 function Home () {
 
     return (

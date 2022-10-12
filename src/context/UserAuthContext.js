@@ -35,7 +35,7 @@ export function UserAuthContextProvider({ children }) {
 
     function googleSignIn() {
         const googleAuthProvider = new GoogleAuthProvider();
-        return signInWithPopup(auth, googleAuthProvider); // Pass auth instance and the provider
+        return signInWithPopup(auth, googleAuthProvider); 
     }
 
     useEffect(() => {

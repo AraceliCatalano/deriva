@@ -58,24 +58,18 @@ const OrderDetail = () =>{
                    <Row>
                     <Col sm={4}> <p className="order-field">Paseo/s incluido/s:</p> </Col>
                     <Col>
-                   
                         {
-                            
                             orderItems.map((tour) =>
                             <div key={tour.id}>
-                                <p> {tour.name}</p>
-                                
-                            </div>
-                                )
+                                <p> {tour.name}</p>        
+                            </div>       )
                             }
                      </Col>  
                      </Row>
-                </Container>
-                
+                </Container>                
             </>
         }
-        </>
-            
+        </>            
     )
   }
   

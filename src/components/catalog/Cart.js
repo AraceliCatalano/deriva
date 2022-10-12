@@ -8,7 +8,7 @@ import swal from "sweetalert";
 import { db, updateStock } from "../../firebase-config";
 
 function Cart() {
-  // Traigo las constantes pasadas como value en CartProvider y accedo por CartContext.
+  
   const { items, removeItem, clearItems, totalCartPrice } =
     useContext(CartContext);
   const [orderStatus, setOrderStatus] = useState(false);
